@@ -1,6 +1,34 @@
 import sys
 from PySide6 import QtCore, QtWidgets, QtGui
 
+# Constants for styling and layout
+WINDOW_WIDTH = 600
+WINDOW_BASE_HEIGHT = 80
+WINDOW_RADIUS = 15
+SEARCH_BAR_HEIGHT = 52
+SEARCH_BAR_FONT_SIZE = 18
+SEARCH_BAR_RADIUS = 25
+
+# Suggestions
+SUGGESTION_ITEM_HEIGHT = 35
+MAX_VISIBLE_SUGGESTIONS = 10
+SUGGESTION_LIST_MARGIN = 20
+
+# Colors
+COLOR_BACKGROUND = "rgba(10, 10, 10, 220)"
+COLOR_SEARCH_BG = "rgba(20, 20, 25, 200)"
+COLOR_SEARCH_BORDER = "rgba(60, 60, 70, 150)"
+COLOR_SEARCH_HOVER_BG = "rgba(30, 30, 35, 210)"
+COLOR_SEARCH_FOCUS_BG = "rgba(25, 25, 30, 230)"
+COLOR_TEXT = "#f0f0f0"
+COLOR_PLACEHOLDER = "rgba(200, 200, 200, 100)"
+COLOR_SUGGESTION_BG = "rgba(15, 15, 20, 220)"
+COLOR_SUGGESTION_HOVER = "rgba(40, 40, 50, 180)"
+COLOR_SUGGESTION_SELECTED = "rgba(70, 120, 255, 120)"
+COLOR_SCROLLBAR_BG = "rgba(30, 30, 35, 180)"
+COLOR_SCROLLBAR_HANDLE = "rgba(100, 100, 110, 180)"
+COLOR_SCROLLBAR_HANDLE_HOVER = "rgba(130, 130, 140, 200)"
+
 class SuggestionsDisplay(QtWidgets.QWidget):
     suggestion_clicked = QtCore.Signal(str)
     
@@ -9,48 +37,39 @@ class SuggestionsDisplay(QtWidgets.QWidget):
         self.setup_ui()
         
     def setup_ui(self):
-        # Create suggestions list
         self.suggestions_list = QtWidgets.QListWidget()
-        self.suggestions_list.setMaximumHeight(200)
         self.suggestions_list.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAsNeeded)
         self.suggestions_list.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
-        
-        # Layout
+        self.suggestions_list.setFocusPolicy(QtCore.Qt.StrongFocus)
+
         layout = QtWidgets.QVBoxLayout(self)
         layout.setContentsMargins(0, 5, 0, 0)
         layout.addWidget(self.suggestions_list)
         
         # Connect signals
         self.suggestions_list.itemClicked.connect(self.on_item_clicked)
+        self.suggestions_list.itemActivated.connect(self.on_item_clicked)  # Enter key support
         
     def set_suggestions(self, suggestions):
-        """Set the suggestions to display"""
         self.suggestions_list.clear()
-        
         if not suggestions:
             return
-            
         for suggestion in suggestions:
-            item = QtWidgets.QListWidgetItem(suggestion)
-            self.suggestions_list.addItem(item)
+            self.suggestions_list.addItem(QtWidgets.QListWidgetItem(suggestion))
             
     def get_suggested_height(self):
-        """Calculate the height needed for current suggestions"""
         item_count = self.suggestions_list.count()
         if item_count == 0:
             return 0
-            
-        item_height = 35  # Approximate height per item
-        max_visible_items = 6
-        
-        if item_count <= max_visible_items:
-            return item_count * item_height + 20
+        if item_count <= MAX_VISIBLE_SUGGESTIONS:
+            return item_count * SUGGESTION_ITEM_HEIGHT + SUGGESTION_LIST_MARGIN
         else:
-            return max_visible_items * item_height + 20
+            return MAX_VISIBLE_SUGGESTIONS * SUGGESTION_ITEM_HEIGHT + SUGGESTION_LIST_MARGIN
             
     @QtCore.Slot(QtWidgets.QListWidgetItem)
     def on_item_clicked(self, item):
         self.suggestion_clicked.emit(item.text())
+
 
 class MainWindow(QtWidgets.QWidget):
     def __init__(self):
@@ -59,159 +78,144 @@ class MainWindow(QtWidgets.QWidget):
         self.setup_styling()
         
     def setup_ui(self):
-        # Set window properties
         self.setWindowTitle("Nova")
-        self.setFixedSize(600, 80)  # Will be resized dynamically
-        
-        # Make window frameless and always on top
+        self.setFixedSize(WINDOW_WIDTH, WINDOW_BASE_HEIGHT)
         self.setWindowFlags(QtCore.Qt.FramelessWindowHint | QtCore.Qt.WindowStaysOnTopHint)
         self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
         
-        # Initialize drag variables
         self.drag_position = None
-        self.base_height = 80
-        
-        # Initialize callback and suggestions
+        self.base_height = WINDOW_BASE_HEIGHT
         self.text_changed_callback = None
         self.current_suggestions = []
         
-        # Create search bar
         self.search_bar = QtWidgets.QLineEdit()
         self.search_bar.setPlaceholderText("Search anything...")
-        self.search_bar.setFixedHeight(52)
+        self.search_bar.setFixedHeight(SEARCH_BAR_HEIGHT)
+        self.search_bar.setFocusPolicy(QtCore.Qt.StrongFocus)
         
-        # Create suggestions display
         self.suggestions_display = SuggestionsDisplay()
         self.suggestions_display.setVisible(False)
         
-        # Create layout
         layout = QtWidgets.QVBoxLayout(self)
         layout.setContentsMargins(20, 15, 20, 15)
         layout.setSpacing(0)
         layout.addWidget(self.search_bar)
         layout.addWidget(self.suggestions_display)
         
-        # Connect signals
         self.search_bar.returnPressed.connect(self.handle_search)
         self.search_bar.textChanged.connect(self.handle_text_changed)
         self.suggestions_display.suggestion_clicked.connect(self.on_suggestion_selected)
+
+        # Enable Tab navigation
+        self.setTabOrder(self.search_bar, self.suggestions_display.suggestions_list)
         
-        # Center window on screen
         self.center_window()
         
     def setup_styling(self):
-        # Very dark frosted glass theme
-        style = """
-        QWidget {
-            background: rgba(10, 10, 10, 220);
-            border-radius: 15px;
-        }
+        style = f"""
+        QWidget {{
+            background: {COLOR_BACKGROUND};
+            border-radius: {WINDOW_RADIUS}px;
+        }}
         
-        QLineEdit {
-            background: rgba(20, 20, 25, 200);
-            border: 1px solid rgba(60, 60, 70, 150);
-            border-radius: 25px;
+        QLineEdit {{
+            background: {COLOR_SEARCH_BG};
+            border: 1px solid {COLOR_SEARCH_BORDER};
+            border-radius: {SEARCH_BAR_RADIUS}px;
             padding: 0 25px;
-            font-size: 18px;
+            font-size: {SEARCH_BAR_FONT_SIZE}px;
             font-weight: 400;
-            color: #f0f0f0;
-            selection-background-color: rgba(70, 120, 255, 120);
-        }
+            color: {COLOR_TEXT};
+            selection-background-color: {COLOR_SUGGESTION_SELECTED};
+        }}
         
-        QLineEdit:focus {
-            border: 2px solid rgba(70, 120, 255, 255);
-            background: rgba(25, 25, 30, 230);
-            box-shadow: 0 0 20px rgba(70, 120, 255, 50);
-        }
+        QLineEdit:focus {{
+            border: 1px solid {COLOR_SEARCH_BORDER}; /* No blue outline */
+            background: {COLOR_SEARCH_FOCUS_BG};
+            box-shadow: none;
+        }}
         
-        QLineEdit:hover {
-            background: rgba(30, 30, 35, 210);
+        QLineEdit:hover {{
+            background: {COLOR_SEARCH_HOVER_BG};
             border: 1px solid rgba(80, 80, 90, 180);
-        }
+        }}
         
-        QLineEdit::placeholder {
-            color: rgba(200, 200, 200, 100);
+        QLineEdit::placeholder {{
+            color: {COLOR_PLACEHOLDER};
             font-style: italic;
-        }
+        }}
         
-        QListWidget {
-            background: rgba(15, 15, 20, 220);
-            border: 1px solid rgba(60, 60, 70, 150);
+        QListWidget {{
+            background: {COLOR_SUGGESTION_BG};
+            border: 1px solid {COLOR_SEARCH_BORDER};
             border-radius: 15px;
             padding: 8px;
             font-size: 14px;
             color: #e0e0e0;
             outline: none;
-        }
+        }}
         
-        QListWidget::item {
+        QListWidget::item {{
             background: transparent;
             padding: 8px 12px;
             border-radius: 8px;
             margin: 2px 0;
-        }
+        }}
         
-        QListWidget::item:hover {
-            background: rgba(40, 40, 50, 180);
-        }
+        QListWidget::item:hover {{
+            background: {COLOR_SUGGESTION_HOVER};
+        }}
         
-        QListWidget::item:selected {
-            background: rgba(70, 120, 255, 120);
-        }
+        QListWidget::item:selected {{
+            background: {COLOR_SUGGESTION_SELECTED};
+        }}
         
-        QScrollBar:vertical {
-            background: rgba(30, 30, 35, 180);
+        QScrollBar:vertical {{
+            background: {COLOR_SCROLLBAR_BG};
             width: 8px;
             border-radius: 4px;
             margin: 0;
-        }
+        }}
         
-        QScrollBar::handle:vertical {
-            background: rgba(100, 100, 110, 180);
+        QScrollBar::handle:vertical {{
+            background: {COLOR_SCROLLBAR_HANDLE};
             border-radius: 4px;
             min-height: 20px;
-        }
+        }}
         
-        QScrollBar::handle:vertical:hover {
-            background: rgba(130, 130, 140, 200);
-        }
+        QScrollBar::handle:vertical:hover {{
+            background: {COLOR_SCROLLBAR_HANDLE_HOVER};
+        }}
         
-        QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+        QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {{
             height: 0px;
-        }
+        }}
         """
         self.setStyleSheet(style)
         
     def center_window(self):
-        # Center the window on the screen
         screen = QtGui.QGuiApplication.primaryScreen().geometry()
         window_geometry = self.frameGeometry()
-        center_point = screen.center()
-        window_geometry.moveCenter(center_point)
+        window_geometry.moveCenter(screen.center())
         self.move(window_geometry.topLeft())
         
     def paintEvent(self, event):
-        # Create enhanced frosted glass effect
         painter = QtGui.QPainter(self)
         painter.setRenderHint(QtGui.QPainter.Antialiasing)
         
-        # Create rounded rectangle path
         path = QtGui.QPainterPath()
-        path.addRoundedRect(self.rect(), 15, 15)
+        path.addRoundedRect(self.rect(), WINDOW_RADIUS, WINDOW_RADIUS)
         
-        # Fill with very dark semi-transparent color for frosted effect
         painter.fillPath(path, QtGui.QColor(8, 8, 12, 240))
         
-        # Add multiple subtle borders for depth
         pen1 = QtGui.QPen(QtGui.QColor(60, 60, 70, 120))
         pen1.setWidth(1)
         painter.setPen(pen1)
         painter.drawPath(path)
         
-        # Inner glow effect
         inner_path = QtGui.QPainterPath()
         inner_rect = self.rect().adjusted(1, 1, -1, -1)
-        inner_path.addRoundedRect(inner_rect, 14, 14)
+        inner_path.addRoundedRect(inner_rect, WINDOW_RADIUS - 1, WINDOW_RADIUS - 1)
         pen2 = QtGui.QPen(QtGui.QColor(40, 40, 50, 80))
         pen2.setWidth(1)
         painter.setPen(pen2)
@@ -222,70 +226,92 @@ class MainWindow(QtWidgets.QWidget):
         search_text = self.search_bar.text().strip()
         if search_text:
             print(f"Searching for: {search_text}")
-            # Add your search functionality here
+
+        # ✅ Run after event loop finishes default handling
+        QtCore.QTimer.singleShot(0, lambda: (
+            self.search_bar.deselect(),
+            self.search_bar.setCursorPosition(len(search_text))
+        ))
+
+
             
     @QtCore.Slot(str)
     def handle_text_changed(self, text):
-        # Call the registered callback if it exists
         if self.text_changed_callback:
             self.text_changed_callback(text)
-            
-        # Hide suggestions if text is empty
         if len(text) == 0:
             self.hide_suggestions()
     
     def set_text_changed_callback(self, callback):
-        """Set the callback function that gets called when text changes"""
         self.text_changed_callback = callback
         
     def set_suggestions(self, suggestions):
-        """Set suggestions to display"""
         if isinstance(suggestions, str):
             suggestions = [suggestions]
-            
         self.current_suggestions = suggestions
         self.update_suggestions_display()
         
     def update_suggestions_display(self):
-        """Update the suggestions display based on current suggestions"""
         if not self.current_suggestions:
             self.hide_suggestions()
             return
-            
         self.suggestions_display.set_suggestions(self.current_suggestions)
         self.show_suggestions()
         
     def show_suggestions(self):
-        """Show the suggestions display and resize window"""
         if not self.suggestions_display.isVisible():
             self.suggestions_display.setVisible(True)
-            
-            # Calculate new height
             suggestions_height = self.suggestions_display.get_suggested_height()
             new_height = self.base_height + suggestions_height
-            self.setFixedSize(600, new_height)
+            self.setFixedSize(WINDOW_WIDTH, new_height)
             
     def hide_suggestions(self):
-        """Hide the suggestions display and resize window back"""
         if self.suggestions_display.isVisible():
             self.suggestions_display.setVisible(False)
-            self.setFixedSize(600, self.base_height)
+            self.setFixedSize(WINDOW_WIDTH, self.base_height)
             
     @QtCore.Slot(str)
     def on_suggestion_selected(self, suggestion):
-        """Handle when a suggestion is clicked"""
-        self.search_bar.setText(suggestion)
-        self.hide_suggestions()
-        self.handle_search()
-            
+        current_text = self.search_bar.text().strip()
+
+        if not current_text:
+            new_text = suggestion
+        else:
+            words = current_text.split()
+
+            if suggestion.startswith("-"):
+                # Append flags
+                words.append(suggestion)
+            else:
+                # Replace last word with the command
+                if current_text.endswith(" "):
+                    words.append(suggestion)
+                else:
+                    words[-1] = suggestion
+
+            new_text = " ".join(words)
+
+        new_text += " "
+
+        self.search_bar.setText(new_text)
+        self.search_bar.setCursorPosition(len(new_text))
+        self.search_bar.deselect()  # No text selection
+
+        self.search_bar.setFocus()
+
+        if self.text_changed_callback:
+            self.text_changed_callback(new_text)
+
+
     def keyPressEvent(self, event):
-        # Close on Escape key
         if event.key() == QtCore.Qt.Key_Escape:
             if self.suggestions_display.isVisible():
                 self.hide_suggestions()
             else:
                 self.close()
-        # Navigate suggestions with arrow keys
+        elif event.key() in (QtCore.Qt.Key_Return, QtCore.Qt.Key_Enter):
+            self.handle_search()
+            return
         elif event.key() == QtCore.Qt.Key_Down and self.suggestions_display.isVisible():
             self.suggestions_display.suggestions_list.setFocus()
             if self.suggestions_display.suggestions_list.count() > 0:
@@ -293,23 +319,28 @@ class MainWindow(QtWidgets.QWidget):
         elif event.key() == QtCore.Qt.Key_Up and self.suggestions_display.isVisible():
             self.suggestions_display.suggestions_list.setFocus()
             if self.suggestions_display.suggestions_list.count() > 0:
-                self.suggestions_display.suggestions_list.setCurrentRow(self.suggestions_display.suggestions_list.count() - 1)
+                last_index = self.suggestions_display.suggestions_list.count() - 1
+                self.suggestions_display.suggestions_list.setCurrentRow(last_index)
         super().keyPressEvent(event)
         
     def mousePressEvent(self, event):
-        # Enable dragging when clicking anywhere on the window
         if event.button() == QtCore.Qt.LeftButton:
             self.drag_position = event.globalPosition().toPoint() - self.frameGeometry().topLeft()
             event.accept()
     
     def mouseMoveEvent(self, event):
-        # Move window when dragging
         if event.buttons() == QtCore.Qt.LeftButton and self.drag_position is not None:
             self.move(event.globalPosition().toPoint() - self.drag_position)
             event.accept()
     
     def mouseReleaseEvent(self, event):
-        # Stop dragging
         if event.button() == QtCore.Qt.LeftButton:
             self.drag_position = None
             event.accept()
+
+
+if __name__ == "__main__":
+    app = QtWidgets.QApplication(sys.argv)
+    window = MainWindow()
+    window.show()
+    sys.exit(app.exec())
