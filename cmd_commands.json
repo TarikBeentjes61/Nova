@@ -1,0 +1,288 @@
+{
+  "windows": [
+    {
+      "name": "assoc",
+      "description": "Displays or modifies file extension associations.",
+      "example": "assoc .txt=txtfile",
+      "parameters": [],
+      "category": "File",
+      "command_type": "cmd"
+    },
+    {
+      "name": "attrib",
+      "description": "Displays or changes file attributes.",
+      "example": "attrib +r myfile.txt",
+      "parameters": [
+        {"name": "read-only", "short": "r", "required": false, "input": false, "description": "Sets the read-only file attribute."},
+        {"name": "archive", "short": "a", "required": false, "input": false, "description": "Sets the archive file attribute."},
+        {"name": "system", "short": "s", "required": false, "input": false, "description": "Sets the system file attribute."},
+        {"name": "hidden", "short": "h", "required": false, "input": false, "description": "Sets the hidden file attribute."}
+      ],
+      "category": "Permissions",
+      "command_type": "cmd"
+    },
+    {
+      "name": "break",
+      "description": "Sets or clears extended CTRL+C checking.",
+      "example": "break on",
+      "parameters": [
+        {"name": "on", "required": false, "input": false, "description": "Enables extended CTRL+C checking."},
+        {"name": "off", "required": false, "input": false, "description": "Disables extended CTRL+C checking."}
+      ],
+      "category": "Interpreter",
+      "command_type": "cmd"
+    },
+    {
+      "name": "bcdedit",
+      "description": "Sets properties in boot database to control boot loading.",
+      "example": "bcdedit /set {current} safeboot minimal",
+      "parameters": [
+        {"name": "set", "required": false, "input": true, "description": "Sets a boot entry option."},
+        {"name": "deletevalue", "required": false, "input": true, "description": "Deletes a boot entry option value."}
+      ],
+      "category": "Boot",
+      "command_type": "cmd"
+    },
+    {
+      "name": "cacls",
+      "description": "Displays or modifies access control lists (ACLs) of files.",
+      "example": "cacls myfile.txt /e /g user:f",
+      "parameters": [
+        {"name": "edit", "short": "e", "required": false, "input": false, "description": "Edit ACL instead of replacing it."},
+        {"name": "grant", "short": "g", "required": false, "input": true, "description": "Grant specified user access rights."},
+        {"name": "deny", "short": "d", "required": false, "input": true, "description": "Deny specified user access rights."}
+      ],
+      "category": "Permissions",
+      "command_type": "cmd"
+    },
+    {
+      "name": "cd",
+      "description": "Displays the name of or changes the current directory.",
+      "example": "cd C:\\Windows",
+      "parameters": [],
+      "category": "Directory",
+      "command_type": "cmd"
+    },
+    {
+      "name": "chkdsk",
+      "description": "Checks a disk and displays a status report.",
+      "example": "chkdsk C: /f /r",
+      "parameters": [
+        {"name": "fix", "short": "f", "required": false, "input": false, "description": "Fixes errors on the disk."},
+        {"name": "recover", "short": "r", "required": false, "input": false, "description": "Locates bad sectors and recovers readable information."}
+      ],
+      "category": "Disk",
+      "command_type": "cmd"
+    },
+    {
+      "name": "cls",
+      "description": "Clears the screen.",
+      "example": "cls",
+      "parameters": [],
+      "category": "Interpreter",
+      "command_type": "cmd"
+    },
+    {
+      "name": "cmd",
+      "description": "Starts a new instance of the Windows command interpreter.",
+      "example": "cmd /k dir",
+      "parameters": [
+        {"name": "execute", "short": "c", "required": false, "input": true, "description": "Carries out the command specified by the string and then terminates."},
+        {"name": "keep", "short": "k", "required": false, "input": true, "description": "Carries out the command specified by the string and remains."}
+      ],
+      "category": "Interpreter",
+      "command_type": "cmd"
+    },
+    {
+      "name": "copy",
+      "description": "Copies one or more files to another location.",
+      "example": "copy file.txt D:\\Backup",
+      "parameters": [],
+      "category": "File",
+      "command_type": "cmd"
+    },
+    {
+      "name": "del",
+      "description": "Deletes one or more files.",
+      "example": "del file.txt",
+      "parameters": [
+        {"name": "force", "short": "f", "required": false, "input": false, "description": "Forces deletion of read-only files."},
+        {"name": "quiet", "short": "q", "required": false, "input": false, "description": "Suppresses confirmation prompt."}
+      ],
+      "category": "File",
+      "command_type": "cmd"
+    },
+    {
+      "name": "dir",
+      "description": "Displays a list of files and subdirectories in a directory.",
+      "example": "dir C:\\Users",
+      "parameters": [
+        {"name": "bare", "short": "b", "required": false, "input": false, "description": "Displays a bare list of directories and files."},
+        {"name": "wide", "short": "w", "required": false, "input": false, "description": "Uses wide list format."}
+      ],
+      "category": "Directory",
+      "command_type": "cmd"
+    },
+    {
+      "name": "diskpart",
+      "description": "Displays or configures disk partition properties.",
+      "example": "diskpart /s script.txt",
+      "parameters": [
+        {"name": "script", "short": "s", "required": false, "input": true, "description": "Specifies the script file to run."}
+      ],
+      "category": "Disk",
+      "command_type": "cmd"
+    },
+    {
+      "name": "echo",
+      "description": "Displays messages or turns command echoing on or off.",
+      "example": "echo Hello World",
+      "parameters": [
+        {"name": "off", "required": false, "input": false, "description": "Turns echoing off."},
+        {"name": "on", "required": false, "input": false, "description": "Turns echoing on."}
+      ],
+      "category": "Interpreter",
+      "command_type": "cmd"
+    },
+    {
+      "name": "exit",
+      "description": "Quits the CMD.EXE program (command interpreter).",
+      "example": "exit",
+      "parameters": [],
+      "category": "Interpreter",
+      "command_type": "cmd"
+    },
+    {
+      "name": "format",
+      "description": "Formats a disk for use with Windows.",
+      "example": "format C: /q /x",
+      "parameters": [
+        {"name": "quick", "short": "q", "required": false, "input": false, "description": "Performs a quick format."},
+        {"name": "force", "short": "x", "required": false, "input": false, "description": "Forces the volume to dismount first if necessary."}
+      ],
+      "category": "Disk",
+      "command_type": "cmd"
+    },
+    {
+      "name": "help",
+      "description": "Provides Help information for Windows commands.",
+      "example": "help copy",
+      "parameters": [],
+      "category": "Interpreter",
+      "command_type": "cmd"
+    },
+    {
+      "name": "mkdir",
+      "description": "Creates a directory.",
+      "example": "mkdir newfolder",
+      "parameters": [],
+      "category": "Directory",
+      "command_type": "cmd"
+    },
+    {
+      "name": "move",
+      "description": "Moves one or more files from one directory to another.",
+      "example": "move file.txt D:\\Backup",
+      "parameters": [],
+      "category": "File",
+      "command_type": "cmd"
+    },
+    {
+      "name": "ping",
+      "description": "Tests connectivity to a network host.",
+      "example": "ping 8.8.8.8",
+      "parameters": [
+        {"name": "count", "short": "n", "required": false, "input": true, "description": "Number of echo requests to send."},
+        {"name": "timeout", "short": "w", "required": false, "input": true, "description": "Timeout in milliseconds to wait for each reply."}
+      ],
+      "category": "Network",
+      "command_type": "cmd"
+    },
+    {
+      "name": "rd",
+      "description": "Removes a directory.",
+      "example": "rd oldfolder",
+      "parameters": [],
+      "category": "Directory",
+      "command_type": "cmd"
+    },
+    {
+      "name": "ren",
+      "description": "Renames a file or files.",
+      "example": "ren oldname.txt newname.txt",
+      "parameters": [],
+      "category": "File",
+      "command_type": "cmd"
+    },
+    {
+      "name": "shutdown",
+      "description": "Shuts down or restarts the computer.",
+      "example": "shutdown /s /t 30",
+      "parameters": [
+        {"name": "shutdown", "short": "s", "required": false, "input": false, "description": "Shutdown the computer."},
+        {"name": "restart", "short": "r", "required": false, "input": false, "description": "Restart the computer."},
+        {"name": "timeout", "short": "t", "required": false, "input": true, "description": "Set timeout before shutdown or restart."}
+      ],
+      "category": "System",
+      "command_type": "cmd"
+    },
+    {
+      "name": "tasklist",
+      "description": "Displays all currently running tasks including services.",
+      "example": "tasklist",
+      "parameters": [],
+      "category": "Process",
+      "command_type": "cmd"
+    },
+    {
+      "name": "taskkill",
+      "description": "Kills or stops a running process or application.",
+      "example": "taskkill /im notepad.exe",
+      "parameters": [
+        {"name": "image", "short": "im", "required": false, "input": true, "description": "Specifies image name of process to be terminated."},
+        {"name": "pid", "short": "pid", "required": false, "input": true, "description": "Specifies process ID of process to be terminated."},
+        {"name": "force", "short": "f", "required": false, "input": false, "description": "Forces termination."}
+      ],
+      "category": "Process",
+      "command_type": "cmd"
+    },
+    {
+      "name": "time",
+      "description": "Displays or sets the system time.",
+      "example": "time 14:30",
+      "parameters": [],
+      "category": "System",
+      "command_type": "cmd"
+    },
+    {
+      "name": "tree",
+      "description": "Graphically displays the directory structure of a drive.",
+      "example": "tree C:\\",
+      "parameters": [
+        {"name": "ascii", "short": "a", "required": false, "input": false, "description": "Uses ASCII instead of extended characters."},
+        {"name": "directories-only", "short": "f", "required": false, "input": false, "description": "Displays the names of the files in each folder."}
+      ],
+      "category": "Directory",
+      "command_type": "cmd"
+    },
+    {
+      "name": "type",
+      "description": "Displays the contents of a text file.",
+      "example": "type file.txt",
+      "parameters": [],
+      "category": "File",
+      "command_type": "cmd"
+    },
+    {
+      "name": "xcopy",
+      "description": "Copies files and directory trees.",
+      "example": "xcopy source destination /s /e",
+      "parameters": [
+        {"name": "subdirectories", "short": "s", "required": false, "input": false, "description": "Copies directories and subdirectories except empty ones."},
+        {"name": "empty-directories", "short": "e", "required": false, "input": false, "description": "Copies empty directories as well."}
+      ],
+      "category": "File",
+      "command_type": "cmd"
+    }
+  ]
+}

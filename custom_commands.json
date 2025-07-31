@@ -1,10 +1,11 @@
 {
-  "commands": [
+  "custom": [
     {
       "name": "print",
       "description": "Prints something to the console",
       "example": "print -u 'Hello World!'",
-
+      "category": "Text",
+      "command_type": "custom",
       "parameters": [
         {
           "name": "upper",
@@ -29,11 +30,12 @@
         }
       ]
     },
-        {
+    {
       "name": "ptest",
       "description": "test something",
       "example": "test",
-
+      "category": "Text",
+      "command_type": "custom",
       "parameters": [
         {
           "name": "test",
