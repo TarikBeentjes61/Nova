@@ -1,0 +1,380 @@
+{
+  "programs": [
+    {
+      "name": "Vortex",
+      "install_location": null
+    },
+    {
+      "name": "AMD Software",
+      "install_location": "C:\\Program Files\\AMD\\CIM\\BIN64"
+    },
+    {
+      "name": "Android Studio",
+      "install_location": null
+    },
+    {
+      "name": "Cheat Engine",
+      "install_location": "C:\\Program Files\\Cheat Engine 7.5\\"
+    },
+    {
+      "name": "Cisco Packet Tracer",
+      "install_location": "C:\\Program Files\\Cisco Packet Tracer 8.2.0\\"
+    },
+    {
+      "name": "Docker Desktop",
+      "install_location": "C:\\Program Files\\Docker\\Docker"
+    },
+    {
+      "name": "Git",
+      "install_location": "C:\\Program Files\\Git\\"
+    },
+    {
+      "name": "Microsoft SQL Server 2022 (64-bit)",
+      "install_location": null
+    },
+    {
+      "name": "Notepad++ (64-bit x64)",
+      "install_location": null
+    },
+    {
+      "name": "Oculus",
+      "install_location": "C:\\Program Files\\Oculus\\"
+    },
+    {
+      "name": "The Long Drive",
+      "install_location": ""
+    },
+    {
+      "name": "Pathfinder: Wrath of the Righteous - Enhanced Edition",
+      "install_location": ""
+    },
+    {
+      "name": "Rabbit and Steel",
+      "install_location": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Rabbit and Steel"
+    },
+    {
+      "name": "Source SDK Base 2006",
+      "install_location": ""
+    },
+    {
+      "name": "Peaks of Yore",
+      "install_location": ""
+    },
+    {
+      "name": "Warframe",
+      "install_location": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Warframe"
+    },
+    {
+      "name": "Death Must Die",
+      "install_location": ""
+    },
+    {
+      "name": "STRAFTAT",
+      "install_location": ""
+    },
+    {
+      "name": "Path of Exile",
+      "install_location": ""
+    },
+    {
+      "name": "SteamVR",
+      "install_location": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SteamVR"
+    },
+    {
+      "name": "ELDEN RING NIGHTREIGN",
+      "install_location": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ELDEN RING NIGHTREIGN"
+    },
+    {
+      "name": "Drive Beyond Horizons",
+      "install_location": ""
+    },
+    {
+      "name": "R.E.P.O.",
+      "install_location": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\REPO"
+    },
+    {
+      "name": "PEAK",
+      "install_location": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\PEAK"
+    },
+    {
+      "name": "Mage Arena",
+      "install_location": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Mage Arena"
+    },
+    {
+      "name": "Factorio",
+      "install_location": ""
+    },
+    {
+      "name": "Divinity: Original Sin 2",
+      "install_location": ""
+    },
+    {
+      "name": "SYNTHETIK",
+      "install_location": ""
+    },
+    {
+      "name": "Risk of Rain 2",
+      "install_location": ""
+    },
+    {
+      "name": "Pathfinder: Kingmaker",
+      "install_location": ""
+    },
+    {
+      "name": "Noita",
+      "install_location": ""
+    },
+    {
+      "name": "Torchlight: Infinite",
+      "install_location": null
+    },
+    {
+      "name": "Unity Hub",
+      "install_location": null
+    },
+    {
+      "name": "VLC media player",
+      "install_location": "C:\\Program Files\\VideoLAN\\VLC"
+    },
+    {
+      "name": "Vulkan Run Time Libraries",
+      "install_location": null
+    },
+    {
+      "name": "WinRAR (64-bit)",
+      "install_location": "C:\\Program Files\\WinRAR\\"
+    },
+    {
+      "name": "Python Documentation (64-bit)",
+      "install_location": ""
+    },
+    {
+      "name": "NordVPN",
+      "install_location": "C:\\Program Files\\NordVPN\\"
+    },
+    {
+      "name": "Python pip Bootstrap (64-bit)",
+      "install_location": ""
+    },
+    {
+      "name": "Python Executables (64-bit)",
+      "install_location": ""
+    },
+    {
+      "name": "AMD WVR64",
+      "install_location": ""
+    },
+    {
+      "name": "Branding64",
+      "install_location": ""
+    },
+    {
+      "name": "AMD DVR64",
+      "install_location": ""
+    },
+    {
+      "name": "Oracle VM VirtualBox",
+      "install_location": ""
+    },
+    {
+      "name": "Java(TM) SE Development Kit (64-bit)",
+      "install_location": "C:\\Program Files\\Java\\jdk-17\\"
+    },
+    {
+      "name": "SceneBuilder",
+      "install_location": "C:\\Users\\Tarik\\SceneBuilder\\"
+    },
+    {
+      "name": "AMD Settings",
+      "install_location": ""
+    },
+    {
+      "name": "MongoDB 2008R2Plus SSL (64 bit)",
+      "install_location": ""
+    },
+    {
+      "name": "RyzenMasterSDK",
+      "install_location": ""
+    },
+    {
+      "name": "Python Core Interpreter (64-bit)",
+      "install_location": ""
+    },
+    {
+      "name": "Python Test Suite (64-bit)",
+      "install_location": ""
+    },
+    {
+      "name": "WinDirStat",
+      "install_location": ""
+    },
+    {
+      "name": "Python Tcl/Tk Support (64-bit)",
+      "install_location": ""
+    },
+    {
+      "name": "Python Development Libraries (64-bit)",
+      "install_location": ""
+    },
+    {
+      "name": "Node.js",
+      "install_location": ""
+    },
+    {
+      "name": "Python Standard Library (64-bit)",
+      "install_location": ""
+    },
+    {
+      "name": "calibre",
+      "install_location": "C:\\Program Files\\Calibre2\\"
+    },
+    {
+      "name": "CMake",
+      "install_location": "C:\\Program Files\\CMake\\"
+    },
+    {
+      "name": "Hypnospace Outlaw",
+      "install_location": "C:\\Program Files (x86)\\GOG Galaxy\\Games\\Hypnospace Outlaw\\"
+    },
+    {
+      "name": "AMD Chipset Software",
+      "install_location": null
+    },
+    {
+      "name": "Battle.net",
+      "install_location": "C:\\Program Files (x86)\\Battle.net"
+    },
+    {
+      "name": "Brave",
+      "install_location": "C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application"
+    },
+    {
+      "name": "CLion",
+      "install_location": "C:\\Program Files\\JetBrains\\CLion 2020.1.2"
+    },
+    {
+      "name": "Google Chrome",
+      "install_location": "C:\\Program Files (x86)\\Google\\Chrome\\Application"
+    },
+    {
+      "name": "ON_OFF Charge 2 B",
+      "install_location": "C:\\Program Files (x86)\\GIGABYTE\\OnOffCharge2\\"
+    },
+    {
+      "name": "EasyTune",
+      "install_location": "C:\\Program Files (x86)\\GIGABYTE\\EasyTune\\"
+    },
+    {
+      "name": "EasyTuneEngineService",
+      "install_location": "C:\\Program Files (x86)\\Gigabyte\\EasyTuneEngineService\\"
+    },
+    {
+      "name": "SIV",
+      "install_location": "C:\\Program Files (x86)\\GIGABYTE\\SIV\\"
+    },
+    {
+      "name": "@BIOS",
+      "install_location": "C:\\Program Files (x86)\\GIGABYTE\\@BIOS\\"
+    },
+    {
+      "name": "APP Center",
+      "install_location": "C:\\Program Files (x86)\\Gigabyte\\AppCenter\\"
+    },
+    {
+      "name": "IntelliJ IDEA",
+      "install_location": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.1"
+    },
+    {
+      "name": "Hamachi",
+      "install_location": "C:\\Program Files (x86)\\LogMeIn Hamachi\\"
+    },
+    {
+      "name": "OpenAL",
+      "install_location": null
+    },
+    {
+      "name": "Origin",
+      "install_location": "C:\\Program Files (x86)\\Origin"
+    },
+    {
+      "name": "Overwolf",
+      "install_location": "C:\\Program Files (x86)\\Overwolf\\"
+    },
+    {
+      "name": "PyCharm Community Edition",
+      "install_location": "C:\\Program Files\\JetBrains\\PyCharm Community Edition 2020.2.1"
+    },
+    {
+      "name": "qBittorrent",
+      "install_location": null
+    },
+    {
+      "name": "ShiftWindow",
+      "install_location": "C:\\Program Files (x86)\\ShiftWindow\\"
+    },
+    {
+      "name": "Steam",
+      "install_location": null
+    },
+    {
+      "name": "Unity",
+      "install_location": null
+    },
+    {
+      "name": "Unityf1",
+      "install_location": null
+    },
+    {
+      "name": "Ubisoft Connect",
+      "install_location": "C:\\Program Files (x86)\\Ubisoft\\Ubisoft Game Launcher\\"
+    },
+    {
+      "name": "WebStorm",
+      "install_location": "C:\\Program Files\\JetBrains\\WebStorm 2020.1.2"
+    },
+    {
+      "name": "UE4 Prerequisites (x64)",
+      "install_location": null
+    },
+    {
+      "name": "Epic Games Launcher",
+      "install_location": "C:\\Program Files (x86)\\Epic Games\\"
+    },
+    {
+      "name": "Launcher Prerequisites (x64)",
+      "install_location": null
+    },
+    {
+      "name": "Axure RP 10",
+      "install_location": null
+    },
+    {
+      "name": "Python Launcher",
+      "install_location": ""
+    },
+    {
+      "name": "REDlauncher",
+      "install_location": "c:\\Users\\Tarik\\AppData\\Local\\Programs\\CD Projekt RED\\REDlauncher\\"
+    },
+    {
+      "name": "GOG GALAXY",
+      "install_location": "C:\\Program Files (x86)\\GOG Galaxy\\"
+    },
+    {
+      "name": "Smart Backup (x64)",
+      "install_location": "C:\\Program Files (x86)\\GIGABYTE\\Smart Backup"
+    },
+    {
+      "name": "GService",
+      "install_location": "C:\\Program Files (x86)\\GIGABYTE\\GService\\"
+    },
+    {
+      "name": "Epic Online Services",
+      "install_location": ""
+    },
+    {
+      "name": "Minecraft Launcher",
+      "install_location": "C:\\Program Files (x86)\\Minecraft Launcher\\"
+    }
+  ]
+}

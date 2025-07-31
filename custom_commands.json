@@ -1,7 +1,7 @@
 {
   "custom": [
     {
-      "name": "print",
+      "name": "Print",
       "description": "Prints something to the console",
       "example": "print -u 'Hello World!'",
       "category": "Text",

@@ -1,5 +1,6 @@
 import sys
 import json
+import get_programs 
 from PySide6 import QtWidgets
 from nova.ui import MainWindow
 
@@ -34,12 +35,16 @@ with open("cmd_commands.json", "r") as f:
     data_cmd = json.load(f)
     CMD_COMMANDS = data_cmd.get("windows", [])
 
-ALL_COMMANDS = CMD_COMMANDS + CUSTOM_COMMANDS
+get_programs.main()
+
+with open("installed_programs.json", "r") as f:
+    INSTALLED_PROGRAMS = json.load(f).get("programs", [])
+
+ALL_COMMANDS = CMD_COMMANDS + CUSTOM_COMMANDS + INSTALLED_PROGRAMS
 
 def text_changed_callback(text):
     text = text.strip()
     tokens = text.split()
-
     suggestions = []
 
     if not text:
@@ -54,14 +59,13 @@ def text_changed_callback(text):
                 if t.startswith("-"):
                     used_params.add(t.lstrip("-"))
 
-            # Suggest remaining parameters/flags for this command
+            # Suggest remaining parameters
             for param in matching_command.get("parameters", []):
                 if param["short"] not in used_params and param["name"] not in used_params:
                     suggestions.append(f"-{param['short']}" if param.get("short") else f"--{param['name']}")
         else:
-            # Suggest commands that start with typed text
             for cmd in ALL_COMMANDS:
-                if cmd["name"].startswith(first_word):
+                if cmd["name"].lower().startswith(first_word):
                     suggestions.append(cmd["name"])
 
     window.set_suggestions(suggestions)
