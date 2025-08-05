@@ -1,0 +1,50 @@
+{
+  "custom": [
+    {
+      "name": "print",
+      "description": "Prints something to the console",
+      "example": "print -u 'Hello World!'",
+      "category": "Text",
+      "command_type": "custom",
+      "parameters": [
+        {
+          "name": "upper",
+          "short": "u",
+          "required": false,
+          "input": false,
+          "description": "Makes all characters uppercase"
+        },
+        {
+          "name": "lower",
+          "short": "l",
+          "required": false,
+          "input": false,
+          "description": "Makes all characters lowercase"
+        },
+        {
+          "name": "append",
+          "short": "a",
+          "required": false,
+          "input": true,
+          "description": "Adds text after"
+        }
+      ]
+    },
+    {
+      "name": "ptest",
+      "description": "test something",
+      "example": "test",
+      "category": "Text",
+      "command_type": "custom",
+      "parameters": [
+        {
+          "name": "test",
+          "short": "t",
+          "required": false,
+          "input": false,
+          "description": "test ever more"
+        }
+      ]
+    }
+  ]
+}

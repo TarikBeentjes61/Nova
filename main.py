@@ -1,20 +1,34 @@
 import sys
-from PySide6 import QtCore, QtWidgets, QtGui
+from PySide6.QtWidgets import QApplication
 from nova.ui import MainWindow
 
-def text_changed_callback(text):
-    suggestions = []
-    for letter in "abcdefghijklmnopqrstuvwxyz":
-        suggestions.append(f"{text}{letter}")
-    window.set_suggestions(suggestions)
+"""
+Command Categories:
+File → File operations (copy, move, delete, etc.)
+Disk → Disk utilities (format, chkdsk, diskpart)
+System → System control (shutdown, tasklist, taskkill)
+Network → Network utilities (ping)
+Process → Process management (tasklist, taskkill)
+Directory → Directory navigation and management (cd, dir, tree, mkdir, rd)
+Interpreter → Commands related to the CMD environment (cmd, echo, exit, help)
+Boot → Boot configuration (bcdedit)
+Permissions → File permissions and attributes (attrib, cacls)
+
+Command Types:
+cmd
+powershell
+bash
+custom
+python
+git
+system
+...
+"""
 
 def main():
-    global window
-    app = QtWidgets.QApplication([])
+    app = QApplication(sys.argv)
     window = MainWindow()
-    window.set_text_changed_callback(text_changed_callback)
     window.show()
-
     sys.exit(app.exec())
 
 if __name__ == "__main__":
