@@ -1,0 +1,52 @@
+/* General background and text */
+QWidget {
+    background-color: #ffffff;
+    color: #000000;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 14px;
+}
+
+/* Buttons */
+QPushButton {
+    background-color: #f0f0f0;
+    color: #000000;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    padding: 6px 12px;
+}
+
+QPushButton:hover {
+    background-color: #e0e0e0;
+}
+
+QPushButton:pressed {
+    background-color: #d0d0d0;
+}
+
+/* LineEdit (input field) */
+QLineEdit {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    padding: 4px;
+}
+
+/* List Widget */
+QListWidget {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #cccccc;
+}
+
+/* Scrollbars */
+QScrollBar:vertical {
+    background: #f0f0f0;
+    width: 10px;
+    margin: 0;
+}
+
+QScrollBar::handle:vertical {
+    background: #cccccc;
+    min-height: 20px;
+}
