@@ -28,6 +28,7 @@ system
 def main():
     app = QApplication(sys.argv)
     window = MainWindow()
+    app.installEventFilter(window)
     window.show()
     sys.exit(app.exec())
 

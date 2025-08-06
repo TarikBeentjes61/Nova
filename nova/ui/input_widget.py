@@ -9,12 +9,17 @@ class InputWidget(QWidget):
         layout = QVBoxLayout()
         
         self.input = QLineEdit()
-        self.input.setPlaceholderText("Type and press Enter...")
-        self.input.returnPressed.connect(self.emit_search)  
+        self.input.textChanged.connect(self.emit_change)
 
         layout.addWidget(self.input)
         self.setLayout(layout)
 
-    def emit_search(self):
+    def emit_change(self):
         text = self.input.text()
         self.input_changed.emit(text)
+
+    def set_input(self, text):
+        #dont emit signal
+        self.input.blockSignals(True)
+        self.input.setText(text)
+        self.input.blockSignals(False)

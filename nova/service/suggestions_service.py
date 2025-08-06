@@ -1,46 +1,56 @@
 import json
+from nova.model.command import Command, Parameter
 
 class SuggestionsService:
     def __init__(self):
         self.commands = self.get_commands()
 
     def get_commands(self):
-        with open("custom_commands.json", "r") as f:
-            data_custom = json.load(f)
-            custom_commands = data_custom.get("custom", [])
+        commands = []
 
-        with open("cmd_commands.json", "r") as f:
-            data_cmd = json.load(f)
-            cmd_commands = data_cmd.get("windows", [])
-
-        return cmd_commands + custom_commands
+        for filename in ["custom_commands.json", "cmd_commands.json"]:
+            with open(filename, "r") as f:
+                data = json.load(f)
+                for key in data:
+                    for cmd_dict in data[key]:
+                        commands.append(Command.from_dict(cmd_dict))
+        return commands
     
     def get_suggestions(self, input_text):
         input_text = input_text.strip()
         tokens = input_text.split()
-
         suggestions = []
 
         if not input_text:
-            suggestions = [cmd["name"] for cmd in self.commands]
+            return self.commands
+
+        first_word = tokens[0].lower()
+        matching_command = next((cmd for cmd in self.commands if cmd.name.lower() == first_word), None)
+
+        if matching_command:
+            last_token = tokens[-1].lower()
+
+            #find used parameters
+            used_parameters = set()
+            for t in tokens[1:]:
+                if t.startswith("-"):
+                    used_parameters.add(t.lstrip("-"))
+
+            #check if last token needs input
+            for param in matching_command.parameters:
+                if last_token == f"-{param.short}" and param.input:
+                    return []
+
+            #add unused parameters
+            for param in matching_command.parameters:
+                if param.short not in used_parameters and param.name not in used_parameters:
+                    suggestions.append(param)
+
+            return suggestions
         else:
-            first_word = tokens[0].lower()
-            matching_command = next((cmd for cmd in self.commands if cmd["name"].lower() == first_word), None)
-
-            if matching_command:
-                used_params = set()
-                for t in tokens[1:]:
-                    if t.startswith("-"):
-                        used_params.add(t.lstrip("-"))
-
-                # Suggest remaining parameters/flags for this command
-                for param in matching_command.get("parameters", []):
-                    if param["short"] not in used_params and param["name"] not in used_params:
-                        suggestions.append(f"-{param['short']}" if param.get("short") else f"--{param['name']}")
-            else:
-                # Suggest commands that start with typed text
-                for cmd in self.commands:
-                    if cmd["name"].startswith(first_word):
-                        suggestions.append(cmd["name"])
+            #suggest commands that match the first word
+            for command in self.commands:
+                if command.name.lower().startswith(first_word):
+                    suggestions.append(command)
 
         return suggestions
