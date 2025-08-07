@@ -4,6 +4,7 @@ from .input_widget import InputWidget
 from .suggestions_widget import SuggestionsWidget
 from nova.service.suggestions_service import SuggestionsService
 from nova.core.settings import AppSettings
+from nova.model.command import Command, Parameter
 import os
 
 class MainWindow(QWidget):
@@ -36,13 +37,41 @@ class MainWindow(QWidget):
         self.appSettings.set("theme", "light")
 
     def on_input_changed(self, input):
-        suggestions = self.suggestions_service.get_suggestions(input)
-        self.suggestions_widget.update_suggestions(suggestions)
+        self.update_suggestions(input)
 
     #handle completion     
     def on_suggestion_selected(self, suggestion):
-        print(f"Suggestion selected: {suggestion}")
+        input_text = self.input_widget.input.text()
+        has_trailing_space = input_text.endswith(" ")
+        tokens = input_text.strip().split()
 
+        if not tokens and isinstance(suggestion, Command):
+            new_text = suggestion.name
+
+        elif isinstance(suggestion, Command):
+            tokens[0] = suggestion.name
+            new_text = " ".join(tokens)
+
+        elif isinstance(suggestion, Parameter):
+            param_text = f"-{suggestion.short}" if suggestion.short and not suggestion.short.startswith("-") else suggestion.short or suggestion.name
+
+            if has_trailing_space:
+                tokens.append(param_text)
+            else:
+                last_token = tokens[-1] if tokens else ""
+                if last_token.startswith("-") or last_token == "":
+                    tokens[-1] = param_text
+                else:
+                    tokens.append(param_text)
+
+            new_text = " ".join(tokens)
+
+        else:
+            new_text = input_text 
+
+        self.input_widget.set_input(new_text)
+        self.input_widget.input.setCursorPosition(len(new_text))
+        self.input_widget.input.setFocus()
         self.adjustSize()
 
     def update_suggestions(self, input):
@@ -76,12 +105,10 @@ class MainWindow(QWidget):
             elif event.key() in (Qt.Key_Backtab, Qt.Key_Up):
                 self.suggestions_widget.navigate_suggestions(forward=False)
                 return True
-            elif event.key() in (Qt.Key_Return, Qt.Key_Enter):
-                self.suggestions_widget.select_current_suggestion()
-                return True
             elif event.key() == Qt.Key_Escape:
                 self.close()
                 return True    
+        return super().eventFilter(obj, event)
     
 
 

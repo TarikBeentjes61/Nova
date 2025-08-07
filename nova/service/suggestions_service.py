@@ -28,29 +28,21 @@ class SuggestionsService:
         matching_command = next((cmd for cmd in self.commands if cmd.name.lower() == first_word), None)
 
         if matching_command:
-            last_token = tokens[-1].lower()
-
-            #find used parameters
             used_parameters = set()
             for t in tokens[1:]:
-                if t.startswith("-"):
-                    used_parameters.add(t.lstrip("-"))
+                cleaned = t.lstrip("-+/") 
+                used_parameters.add(cleaned)
 
-            #check if last token needs input
-            for param in matching_command.parameters:
-                if last_token == f"-{param.short}" and param.input:
-                    return []
-
-            #add unused parameters
             for param in matching_command.parameters:
                 if param.short not in used_parameters and param.name not in used_parameters:
                     suggestions.append(param)
 
             return suggestions
+
         else:
-            #suggest commands that match the first word
             for command in self.commands:
                 if command.name.lower().startswith(first_word):
                     suggestions.append(command)
 
         return suggestions
+
