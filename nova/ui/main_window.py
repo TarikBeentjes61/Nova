@@ -3,8 +3,10 @@ from PySide6.QtCore import Qt, QEvent
 from .input_widget import InputWidget
 from .suggestions_widget import SuggestionsWidget
 from nova.service.suggestions_service import SuggestionsService
+from nova.service.command_service import CommandService
 from nova.core.settings import AppSettings
 from nova.model.command import Command, Parameter
+from nova.model.suggestion import Suggestion
 import os
 
 class MainWindow(QWidget):
@@ -25,6 +27,7 @@ class MainWindow(QWidget):
 
         #Setup Services
         self.suggestions_service = SuggestionsService()
+        self.command_service = CommandService()
 
         #Setup settings 
         self.appSettings = AppSettings()
@@ -38,17 +41,18 @@ class MainWindow(QWidget):
 
     def on_input_changed(self, input):
         self.update_suggestions(input)
+        self.suggestions_widget.update_selectedSuggestion(input)
 
-    #handle completion     
+    #handle completion      REDO
     def on_suggestion_selected(self, suggestion):
         input_text = self.input_widget.input.text()
         has_trailing_space = input_text.endswith(" ")
         tokens = input_text.strip().split()
 
-        if not tokens and isinstance(suggestion, Command):
+        if not tokens and isinstance(suggestion, Suggestion):
             new_text = suggestion.name
 
-        elif isinstance(suggestion, Command):
+        elif isinstance(suggestion, Suggestion):
             tokens[0] = suggestion.name
             new_text = " ".join(tokens)
 
@@ -104,6 +108,10 @@ class MainWindow(QWidget):
                 return True
             elif event.key() in (Qt.Key_Backtab, Qt.Key_Up):
                 self.suggestions_widget.navigate_suggestions(forward=False)
+                return True
+            elif event.key() == Qt.Key_Return:
+                command_input = self.input_widget.input.text()
+                command_output = self.command_service.execute(command_input)
                 return True
             elif event.key() == Qt.Key_Escape:
                 self.close()

@@ -1,6 +1,7 @@
 from PySide6.QtWidgets import QWidget, QListWidget, QVBoxLayout, QSizePolicy, QListWidgetItem
 from PySide6.QtCore import Qt, Signal
-from nova.model.command import Command, Parameter
+from nova.model.command import Parameter
+from nova.model.suggestion import Suggestion
 
 class SuggestionsWidget(QWidget):
     suggestion_selected = Signal(object)
@@ -29,7 +30,7 @@ class SuggestionsWidget(QWidget):
         self.suggestions_list.clear()
 
         for item in items:
-            if isinstance(item, Command):
+            if isinstance(item, Suggestion):
                 display_text = item.name
             elif isinstance(item, Parameter):
                 display_text = f"-{item.short}" if item.short else item.name
@@ -39,6 +40,7 @@ class SuggestionsWidget(QWidget):
             
             self.suggestions_list.addItem(list_item)
 
+        #set height 
         if items:
             row_height = self.suggestions_list.sizeHintForRow(0)
             visible_count = min(len(items), self.maximumItems)
@@ -48,6 +50,19 @@ class SuggestionsWidget(QWidget):
             self.suggestions_list.setFixedHeight(0)
 
         self.adjustSize()
+
+    def update_selectedSuggestion(self, input):
+        tokens = input.strip().split()
+        last_token = tokens[-1] if tokens else None
+
+        if last_token:
+            for i in range(self.suggestions_list.count()):
+                item = self.suggestions_list.item(i)
+                item_text = item.text()
+                if item_text.startswith(last_token):
+                    self.suggestions_list.setCurrentRow(i)
+                    self.suggestions_list.scrollToItem(item)
+                    return
 
     def navigate_suggestions(self, forward=True):
         if self.suggestions_list.currentRow():
@@ -65,6 +80,14 @@ class SuggestionsWidget(QWidget):
 
     def has_suggestions(self):
         return self.suggestions_list.count() > 0
+    
+    def get_selected_parameter(self):
+        current_item = self.suggestions_list.currentItem()
+        if current_item:
+            data = current_item.data(Qt.UserRole)
+            if isinstance(data, Parameter):
+                return data
+        return None
 
     def on_item_clicked(self, item):
         self.suggestion_selected.emit(item.data(Qt.UserRole))

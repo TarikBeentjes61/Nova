@@ -1,0 +1,947 @@
+[
+    {
+        "name": "Administrative Tools",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\WINDOWS\\system32\\control.exe",
+        "exe": "C:\\WINDOWS\\system32\\control.exe"
+    },
+    {
+        "name": "Amazon Games",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Users\\Tarik\\AppData\\Local\\Amazon Games\\App\\Amazon Games.exe",
+        "exe": "C:\\Users\\Tarik\\AppData\\Local\\Amazon Games\\App\\Amazon Games.exe"
+    },
+    {
+        "name": "Awakened PoE Trade",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Users\\Tarik\\AppData\\Local\\Programs\\Awakened PoE Trade\\Awakened PoE Trade.exe",
+        "exe": "C:\\Users\\Tarik\\AppData\\Local\\Programs\\Awakened PoE Trade\\Awakened PoE Trade.exe"
+    },
+    {
+        "name": "CurseForge",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Users\\Tarik\\AppData\\Local\\Programs\\CurseForge Windows\\CurseForge.exe",
+        "exe": "C:\\Users\\Tarik\\AppData\\Local\\Programs\\CurseForge Windows\\CurseForge.exe"
+    },
+    {
+        "name": "Exiled Exchange 2",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Users\\Tarik\\AppData\\Local\\Programs\\Exiled Exchange 2\\Exiled Exchange 2.exe",
+        "exe": "C:\\Users\\Tarik\\AppData\\Local\\Programs\\Exiled Exchange 2\\Exiled Exchange 2.exe"
+    },
+    {
+        "name": "Exilence Next",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Users\\Tarik\\AppData\\Local\\Programs\\Exilence Next\\Exilence Next.exe",
+        "exe": "C:\\Users\\Tarik\\AppData\\Local\\Programs\\Exilence Next\\Exilence Next.exe"
+    },
+    {
+        "name": "GameCompanion",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Users\\Tarik\\AppData\\Roaming\\GameCompanion\\GameCompanion.exe",
+        "exe": "C:\\Users\\Tarik\\AppData\\Roaming\\GameCompanion\\GameCompanion.exe"
+    },
+    {
+        "name": "OneDrive",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Users\\Tarik\\AppData\\Local\\Microsoft\\OneDrive\\OneDrive.exe",
+        "exe": "C:\\Users\\Tarik\\AppData\\Local\\Microsoft\\OneDrive\\OneDrive.exe"
+    },
+    {
+        "name": "Path of Building Community (PoE2)",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Users\\Tarik\\AppData\\Roaming\\Path of Building Community (PoE2)\\Path of Building-PoE2.exe",
+        "exe": "C:\\Users\\Tarik\\AppData\\Roaming\\Path of Building Community (PoE2)\\Path of Building-PoE2.exe"
+    },
+    {
+        "name": "Path of Building Community",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Users\\Tarik\\AppData\\Roaming\\Path of Building Community\\Path of Building.exe",
+        "exe": "C:\\Users\\Tarik\\AppData\\Roaming\\Path of Building Community\\Path of Building.exe"
+    },
+    {
+        "name": "r2modman",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Users\\Tarik\\AppData\\Local\\Programs\\r2modman\\r2modman.exe",
+        "exe": "C:\\Users\\Tarik\\AppData\\Local\\Programs\\r2modman\\r2modman.exe"
+    },
+    {
+        "name": "Spotify",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Users\\Tarik\\AppData\\Roaming\\Spotify\\Spotify.exe",
+        "exe": "C:\\Users\\Tarik\\AppData\\Roaming\\Spotify\\Spotify.exe"
+    },
+    {
+        "name": "LiveCaptions",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\WINDOWS\\system32\\LiveCaptions.exe",
+        "exe": "C:\\WINDOWS\\system32\\LiveCaptions.exe"
+    },
+    {
+        "name": "Magnify",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\WINDOWS\\system32\\magnify.exe",
+        "exe": "C:\\WINDOWS\\system32\\magnify.exe"
+    },
+    {
+        "name": "Narrator",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\WINDOWS\\system32\\narrator.exe",
+        "exe": "C:\\WINDOWS\\system32\\narrator.exe"
+    },
+    {
+        "name": "On-Screen Keyboard",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\WINDOWS\\system32\\osk.exe",
+        "exe": "C:\\WINDOWS\\system32\\osk.exe"
+    },
+    {
+        "name": "VoiceAccess",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\WINDOWS\\system32\\voiceaccess.exe",
+        "exe": "C:\\WINDOWS\\system32\\voiceaccess.exe"
+    },
+    {
+        "name": "DEGIRO",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Users\\Tarik\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Web Applications\\_crx_coedfjacdcjldiiinnjdbiombllmecbl\\DEGIRO.ico",
+        "exe": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome_proxy.exe"
+    },
+    {
+        "name": "Discord",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Users\\Tarik\\AppData\\Local\\Discord\\app.ico",
+        "exe": "C:\\Users\\Tarik\\AppData\\Local\\Discord\\Update.exe"
+    },
+    {
+        "name": "GitHub Desktop",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Users\\Tarik\\AppData\\Local\\GitHubDesktop\\GitHubDesktop.exe",
+        "exe": "C:\\Users\\Tarik\\AppData\\Local\\GitHubDesktop\\GitHubDesktop.exe"
+    },
+    {
+        "name": "MongoDB Compass",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Users\\Tarik\\AppData\\Local\\MongoDBCompass\\MongoDBCompass.exe",
+        "exe": "C:\\Users\\Tarik\\AppData\\Local\\MongoDBCompass\\MongoDBCompass.exe"
+    },
+    {
+        "name": "Postman Agent",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Users\\Tarik\\AppData\\Local\\Postman-Agent\\Postman Agent.exe",
+        "exe": "C:\\Users\\Tarik\\AppData\\Local\\Postman-Agent\\Postman Agent.exe"
+    },
+    {
+        "name": "Postman",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Users\\Tarik\\AppData\\Local\\Postman\\Postman.exe",
+        "exe": "C:\\Users\\Tarik\\AppData\\Local\\Postman\\Postman.exe"
+    },
+    {
+        "name": "IDLE (Python 3.13 64-bit)",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Users\\Tarik\\AppData\\Roaming\\Microsoft\\Installer\\{AC3F660A-8ABD-4E2A-9C2E-D9C1F734D7C9}\\idle.exe",
+        "exe": "C:\\Users\\Tarik\\AppData\\Local\\Programs\\Python\\Python313\\pythonw.exe"
+    },
+    {
+        "name": "Python 3.13 (64-bit)",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Users\\Tarik\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "exe": "C:\\Users\\Tarik\\AppData\\Local\\Programs\\Python\\Python313\\python.exe"
+    },
+    {
+        "name": "Python 3.13 Module Docs (64-bit)",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Users\\Tarik\\AppData\\Roaming\\Microsoft\\Installer\\{AC3F660A-8ABD-4E2A-9C2E-D9C1F734D7C9}\\idle.exe",
+        "exe": "C:\\Users\\Tarik\\AppData\\Local\\Programs\\Python\\Python313\\python.exe"
+    },
+    {
+        "name": "Roblox Player",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Users\\Tarik\\AppData\\Local\\Roblox\\Versions\\version-0a57b2f24afe434b\\RobloxPlayerBeta.exe",
+        "exe": "C:\\Users\\Tarik\\AppData\\Local\\Roblox\\Versions\\version-0a57b2f24afe434b\\RobloxPlayerBeta.exe"
+    },
+    {
+        "name": "Roblox Studio",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Users\\Tarik\\AppData\\Local\\Roblox\\Versions\\RobloxStudioLauncherBeta.exe",
+        "exe": "C:\\Users\\Tarik\\AppData\\Local\\Roblox\\Versions\\RobloxStudioLauncherBeta.exe"
+    },
+    {
+        "name": "Steam",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files (x86)\\Steam\\steam.exe",
+        "exe": "C:\\Program Files (x86)\\Steam\\steam.exe"
+    },
+    {
+        "name": "Command Prompt",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\WINDOWS\\system32\\cmd.exe",
+        "exe": "C:\\WINDOWS\\system32\\cmd.exe"
+    },
+    {
+        "name": "Visual Studio Code",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Users\\Tarik\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe",
+        "exe": "C:\\Users\\Tarik\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
+    },
+    {
+        "name": "Windows PowerShell (x86)",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell.exe",
+        "exe": "C:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell.exe"
+    },
+    {
+        "name": "Windows PowerShell",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+        "exe": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+    },
+    {
+        "name": "WinRAR",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files\\WinRAR\\WinRAR.exe",
+        "exe": "C:\\Program Files\\WinRAR\\WinRAR.exe"
+    },
+    {
+        "name": "Access",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files\\Microsoft Office\\Root\\VFS\\Windows\\Installer\\{90160000-000F-0000-1000-0000000FF1CE}\\accicons.exe",
+        "exe": "C:\\Program Files\\Microsoft Office\\root\\Office16\\MSACCESS.EXE"
+    },
+    {
+        "name": "Blend for Visual Studio 2022",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\Blend.exe",
+        "exe": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\Blend.exe"
+    },
+    {
+        "name": "Brave",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe",
+        "exe": "C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe"
+    },
+    {
+        "name": "DB Browser (SQLCipher)",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files\\DB Browser for SQLite\\DB Browser for SQLCipher.exe",
+        "exe": "C:\\Program Files\\DB Browser for SQLite\\DB Browser for SQLCipher.exe"
+    },
+    {
+        "name": "DB Browser (SQLite)",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files\\DB Browser for SQLite\\DB Browser for SQLite.exe",
+        "exe": "C:\\Program Files\\DB Browser for SQLite\\DB Browser for SQLite.exe"
+    },
+    {
+        "name": "Epic Games Launcher",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files (x86)\\Epic Games\\Launcher\\Portal\\Binaries\\Win32\\EpicGamesLauncher.exe",
+        "exe": "C:\\Program Files (x86)\\Epic Games\\Launcher\\Portal\\Binaries\\Win32\\EpicGamesLauncher.exe"
+    },
+    {
+        "name": "Excel",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files\\Microsoft Office\\Root\\VFS\\Windows\\Installer\\{90160000-000F-0000-1000-0000000FF1CE}\\xlicons.exe",
+        "exe": "C:\\Program Files\\Microsoft Office\\root\\Office16\\EXCEL.EXE"
+    },
+    {
+        "name": "Google Chrome",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
+        "exe": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
+    },
+    {
+        "name": "Microsoft Edge",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+        "exe": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe"
+    },
+    {
+        "name": "Notepad++",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files\\Notepad++\\notepad++.exe",
+        "exe": "C:\\Program Files\\Notepad++\\notepad++.exe"
+    },
+    {
+        "name": "OneNote",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files\\Microsoft Office\\Root\\VFS\\Windows\\Installer\\{90160000-000F-0000-1000-0000000FF1CE}\\joticon.exe",
+        "exe": "C:\\Program Files\\Microsoft Office\\root\\Office16\\ONENOTE.EXE"
+    },
+    {
+        "name": "Outlook (classic)",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files\\Microsoft Office\\Root\\VFS\\Windows\\Installer\\{90160000-000F-0000-1000-0000000FF1CE}\\outicon.exe",
+        "exe": "C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE"
+    },
+    {
+        "name": "PC Health Check",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files\\PCHealthCheck\\PCHealthCheck.exe",
+        "exe": "C:\\Program Files\\PCHealthCheck\\PCHealthCheck.exe"
+    },
+    {
+        "name": "PowerPoint",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files\\Microsoft Office\\Root\\VFS\\Windows\\Installer\\{90160000-000F-0000-1000-0000000FF1CE}\\pptico.exe",
+        "exe": "C:\\Program Files\\Microsoft Office\\root\\Office16\\POWERPNT.EXE"
+    },
+    {
+        "name": "Publisher",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files\\Microsoft Office\\Root\\VFS\\Windows\\Installer\\{90160000-000F-0000-1000-0000000FF1CE}\\pubs.exe",
+        "exe": "C:\\Program Files\\Microsoft Office\\root\\Office16\\MSPUB.EXE"
+    },
+    {
+        "name": "Sticky Notes (new)",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files\\Microsoft Office\\Root\\VFS\\Windows\\Installer\\{90160000-000F-0000-1000-0000000FF1CE}\\joticon.exe",
+        "exe": "C:\\Program Files\\Microsoft Office\\root\\Office16\\ONENOTE.EXE"
+    },
+    {
+        "name": "Unity Hub",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files\\Unity Hub\\Unity Hub.exe",
+        "exe": "C:\\Program Files\\Unity Hub\\Unity Hub.exe"
+    },
+    {
+        "name": "Visual Studio 2022",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\devenv.exe",
+        "exe": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\devenv.exe"
+    },
+    {
+        "name": "Visual Studio Installer",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files (x86)\\Microsoft Visual Studio\\Installer\\setup.exe",
+        "exe": "C:\\Program Files (x86)\\Microsoft Visual Studio\\Installer\\setup.exe"
+    },
+    {
+        "name": "WinDirStat",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files\\WinDirStat\\WinDirStat.exe",
+        "exe": "C:\\Program Files\\WinDirStat\\WinDirStat.exe"
+    },
+    {
+        "name": "Word",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files\\Microsoft Office\\Root\\VFS\\Windows\\Installer\\{90160000-000F-0000-1000-0000000FF1CE}\\wordicon.exe",
+        "exe": "C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE"
+    },
+    {
+        "name": "Remote Desktop Connection",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\WINDOWS\\system32\\mstsc.exe",
+        "exe": "C:\\WINDOWS\\system32\\mstsc.exe"
+    },
+    {
+        "name": "Steps Recorder",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\WINDOWS\\system32\\psr.exe",
+        "exe": "C:\\WINDOWS\\system32\\psr.exe"
+    },
+    {
+        "name": "Windows Fax and Scan",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\WINDOWS\\system32\\WFS.exe",
+        "exe": "C:\\WINDOWS\\system32\\WFS.exe"
+    },
+    {
+        "name": "Windows Media Player Legacy",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files (x86)\\Windows Media Player\\wmplayer.exe",
+        "exe": "C:\\Program Files (x86)\\Windows Media Player\\wmplayer.exe"
+    },
+    {
+        "name": "dfrgui",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\WINDOWS\\system32\\dfrgui.exe",
+        "exe": "C:\\WINDOWS\\system32\\dfrgui.exe"
+    },
+    {
+        "name": "Disk Cleanup",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\WINDOWS\\system32\\cleanmgr.exe",
+        "exe": "C:\\WINDOWS\\system32\\cleanmgr.exe"
+    },
+    {
+        "name": "iSCSI Initiator",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\WINDOWS\\system32\\iscsicpl.exe",
+        "exe": "C:\\WINDOWS\\system32\\iscsicpl.exe"
+    },
+    {
+        "name": "Memory Diagnostics Tool",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\WINDOWS\\system32\\MdSched.exe",
+        "exe": "C:\\WINDOWS\\system32\\MdSched.exe"
+    },
+    {
+        "name": "ODBC Data Sources (32-bit)",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\WINDOWS\\syswow64\\odbcad32.exe",
+        "exe": "C:\\WINDOWS\\syswow64\\odbcad32.exe"
+    },
+    {
+        "name": "ODBC Data Sources (64-bit)",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\WINDOWS\\system32\\odbcad32.exe",
+        "exe": "C:\\WINDOWS\\system32\\odbcad32.exe"
+    },
+    {
+        "name": "RecoveryDrive",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\WINDOWS\\system32\\RecoveryDrive.exe",
+        "exe": "C:\\WINDOWS\\system32\\RecoveryDrive.exe"
+    },
+    {
+        "name": "Registry Editor",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\WINDOWS\\regedit.exe",
+        "exe": "C:\\WINDOWS\\regedit.exe"
+    },
+    {
+        "name": "Resource Monitor",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\WINDOWS\\system32\\perfmon.exe",
+        "exe": "C:\\WINDOWS\\system32\\perfmon.exe"
+    },
+    {
+        "name": "System Configuration",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\WINDOWS\\system32\\msconfig.exe",
+        "exe": "C:\\WINDOWS\\system32\\msconfig.exe"
+    },
+    {
+        "name": "System Information",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\WINDOWS\\system32\\msinfo32.exe",
+        "exe": "C:\\WINDOWS\\system32\\msinfo32.exe"
+    },
+    {
+        "name": "AMD Bug Report Tool",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files\\AMD\\CIM\\Bin64\\AMDSoftwareConsumer.ico",
+        "exe": "C:\\Windows\\SysWOW64\\AMDBugReportTool.exe"
+    },
+    {
+        "name": "Android Studio",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files\\Android\\Android Studio\\bin\\studio64.exe",
+        "exe": "C:\\Program Files\\Android\\Android Studio\\bin\\studio64.exe"
+    },
+    {
+        "name": "Battle.net",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files (x86)\\Battle.net\\Battle.net Launcher.exe",
+        "exe": "C:\\Program Files (x86)\\Battle.net\\Battle.net Launcher.exe"
+    },
+    {
+        "name": "Vortex",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files\\Black Tree Gaming Ltd\\Vortex\\Vortex.exe",
+        "exe": "C:\\Program Files\\Black Tree Gaming Ltd\\Vortex\\Vortex.exe"
+    },
+    {
+        "name": "calibre 64bit - E-book management",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files\\Calibre2\\calibre.exe",
+        "exe": "C:\\Program Files\\Calibre2\\calibre.exe"
+    },
+    {
+        "name": "E-book viewer 64bit",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files\\Calibre2\\ebook-viewer.exe",
+        "exe": "C:\\Program Files\\Calibre2\\ebook-viewer.exe"
+    },
+    {
+        "name": "Edit E-book 64bit",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files\\Calibre2\\ebook-edit.exe",
+        "exe": "C:\\Program Files\\Calibre2\\ebook-edit.exe"
+    },
+    {
+        "name": "LRF viewer 64bit",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files\\Calibre2\\lrfviewer.exe",
+        "exe": "C:\\Program Files\\Calibre2\\lrfviewer.exe"
+    },
+    {
+        "name": "Cheat Engine (32-bit)",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files\\Cheat Engine 7.5\\cheatengine-i386.exe",
+        "exe": "C:\\Program Files\\Cheat Engine 7.5\\cheatengine-i386.exe"
+    },
+    {
+        "name": "Cheat Engine (64-bit SSE4-AVX2)",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files\\Cheat Engine 7.5\\cheatengine-x86_64-SSE4-AVX2.exe",
+        "exe": "C:\\Program Files\\Cheat Engine 7.5\\cheatengine-x86_64-SSE4-AVX2.exe"
+    },
+    {
+        "name": "Cheat Engine (64-bit)",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files\\Cheat Engine 7.5\\cheatengine-x86_64.exe",
+        "exe": "C:\\Program Files\\Cheat Engine 7.5\\cheatengine-x86_64.exe"
+    },
+    {
+        "name": "Cheat Engine tutorial (64-bit)",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files\\Cheat Engine 7.5\\Tutorial-x86_64.exe",
+        "exe": "C:\\Program Files\\Cheat Engine 7.5\\Tutorial-x86_64.exe"
+    },
+    {
+        "name": "Cheat Engine",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files\\Cheat Engine 7.5\\Cheat Engine.exe",
+        "exe": "C:\\Program Files\\Cheat Engine 7.5\\Cheat Engine.exe"
+    },
+    {
+        "name": "Reset settings",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files\\Cheat Engine 7.5\\ceregreset.exe",
+        "exe": "C:\\Program Files\\Cheat Engine 7.5\\ceregreset.exe"
+    },
+    {
+        "name": "Git Bash",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files\\Git\\mingw64\\share\\git\\git-for-windows.ico",
+        "exe": "C:\\Program Files\\Git\\git-bash.exe"
+    },
+    {
+        "name": "Git CMD",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files\\Git\\mingw64\\share\\git\\git-for-windows.ico",
+        "exe": "C:\\Program Files\\Git\\git-cmd.exe"
+    },
+    {
+        "name": "Git GUI",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files\\Git\\mingw64\\share\\git\\git-for-windows.ico",
+        "exe": "C:\\Program Files\\Git\\cmd\\git-gui.exe"
+    },
+    {
+        "name": "Hypnospace Outlaw",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files (x86)\\GOG Galaxy\\GalaxyClient.exe",
+        "exe": "C:\\Program Files (x86)\\GOG Galaxy\\GalaxyClient.exe"
+    },
+    {
+        "name": "Intel(R) PROSet Adapter Configuration Utility",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Windows\\Installer\\{AC44C09E-6D45-4F0F-8749-C3DF69A55FDE}\\PROSetACU_ICON.ico",
+        "exe": "C:\\Program Files\\Intel\\Wired Networking\\PROSet\\ACU\\PROSetACU.exe"
+    },
+    {
+        "name": "About Java",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files\\Java\\jre1.8.0_311\\bin\\java.exe",
+        "exe": "C:\\Program Files\\Java\\jre1.8.0_311\\bin\\javacpl.exe"
+    },
+    {
+        "name": "Configure Java",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files\\Java\\jre1.8.0_311\\bin\\java.exe",
+        "exe": "C:\\Program Files\\Java\\jre1.8.0_311\\bin\\javacpl.exe"
+    },
+    {
+        "name": "IntelliJ IDEA 2024.1",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.1\\bin\\idea64.exe",
+        "exe": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.1\\bin\\idea64.exe"
+    },
+    {
+        "name": "PyCharm Community Edition 2020.2.1",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files\\JetBrains\\PyCharm Community Edition 2020.2.1\\bin\\pycharm64.exe",
+        "exe": "C:\\Program Files\\JetBrains\\PyCharm Community Edition 2020.2.1\\bin\\pycharm64.exe"
+    },
+    {
+        "name": "WebStorm 2020.1.2",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files\\JetBrains\\WebStorm 2020.1.2\\bin\\webstorm64.exe",
+        "exe": "C:\\Program Files\\JetBrains\\WebStorm 2020.1.2\\bin\\webstorm64.exe"
+    },
+    {
+        "name": "LogMeIn Hamachi",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files (x86)\\LogMeIn Hamachi\\hamachi-2-ui.exe",
+        "exe": "C:\\Program Files (x86)\\LogMeIn Hamachi\\hamachi-2-ui.exe"
+    },
+    {
+        "name": "Office Language Preferences",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files\\Microsoft Office\\Root\\VFS\\Windows\\Installer\\{90160000-000F-0000-1000-0000000FF1CE}\\misc.exe",
+        "exe": "C:\\Program Files\\Microsoft Office\\root\\Office16\\SETLANG.EXE"
+    },
+    {
+        "name": "SQL Server 2022 Import and Export Data (64-bit)",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files\\Microsoft SQL Server\\160\\DTS\\Binn\\DTSWizard.exe",
+        "exe": "C:\\Program Files\\Microsoft SQL Server\\160\\DTS\\Binn\\DTSWizard.exe"
+    },
+    {
+        "name": "Minecraft Launcher",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files (x86)\\Minecraft Launcher\\MinecraftLauncher.exe",
+        "exe": "C:\\Program Files (x86)\\Minecraft Launcher\\MinecraftLauncher.exe"
+    },
+    {
+        "name": "Install Additional Tools for Node.js",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Windows\\System32\\cmd.exe",
+        "exe": "C:\\Windows\\System32\\cmd.exe"
+    },
+    {
+        "name": "Node.js command prompt",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Windows\\System32\\cmd.exe",
+        "exe": "C:\\Windows\\System32\\cmd.exe"
+    },
+    {
+        "name": "Node.js",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files\\nodejs\\node.exe",
+        "exe": "C:\\Program Files\\nodejs\\node.exe"
+    },
+    {
+        "name": "GeForce Experience",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files\\NVIDIA Corporation\\NVIDIA GeForce Experience\\NVIDIA GeForce Experience.exe",
+        "exe": "C:\\Program Files\\NVIDIA Corporation\\NVIDIA GeForce Experience\\NVIDIA GeForce Experience.exe"
+    },
+    {
+        "name": "Oracle VM VirtualBox",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files\\Oracle\\VirtualBox\\VirtualBox.exe",
+        "exe": "C:\\Program Files\\Oracle\\VirtualBox\\VirtualBox.exe"
+    },
+    {
+        "name": "qBittorrent",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files\\qBittorrent\\qbittorrent.exe",
+        "exe": "C:\\Program Files\\qBittorrent\\qbittorrent.exe"
+    },
+    {
+        "name": "Riot Client",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Riot Games\\Riot Client\\RiotClientServices.exe",
+        "exe": "C:\\Riot Games\\Riot Client\\RiotClientServices.exe"
+    },
+    {
+        "name": "ShiftWindow",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files (x86)\\ShiftWindow\\ShiftWindow.exe",
+        "exe": "C:\\Program Files (x86)\\ShiftWindow\\ShiftWindow.exe"
+    },
+    {
+        "name": "Task Manager",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\WINDOWS\\system32\\taskmgr.exe",
+        "exe": "C:\\WINDOWS\\system32\\taskmgr.exe"
+    },
+    {
+        "name": "Report a Problem with Unity",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files\\Unity\\Hub\\Editor\\2019.4.1f1\\Editor\\BugReporter\\UnityBugReporter.exe",
+        "exe": "C:\\Program Files\\Unity\\Hub\\Editor\\2019.4.1f1\\Editor\\BugReporter\\UnityBugReporter.exe"
+    },
+    {
+        "name": "Unity",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files\\Unity\\Hub\\Editor\\2019.4.1f1\\Editor\\Unity.exe",
+        "exe": "C:\\Program Files\\Unity\\Hub\\Editor\\2019.4.1f1\\Editor\\Unity.exe"
+    },
+    {
+        "name": "Windows PowerShell ISE (x86)",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\WINDOWS\\syswow64\\WindowsPowerShell\\v1.0\\PowerShell_ISE.exe",
+        "exe": "C:\\WINDOWS\\syswow64\\WindowsPowerShell\\v1.0\\PowerShell_ISE.exe"
+    },
+    {
+        "name": "Windows PowerShell ISE",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\PowerShell_ISE.exe",
+        "exe": "C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\PowerShell_ISE.exe"
+    },
+    {
+        "name": "Application Verifier (X64)",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Windows\\System32\\appverif.exe",
+        "exe": "C:\\Windows\\System32\\appverif.exe"
+    },
+    {
+        "name": "Application Verifier (WOW)",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Windows\\SysWOW64\\appverif.exe",
+        "exe": "C:\\Windows\\SysWOW64\\appverif.exe"
+    },
+    {
+        "name": "Windows App Cert Kit",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files (x86)\\Windows Kits\\10\\App Certification Kit\\appcertui.exe",
+        "exe": "C:\\Program Files (x86)\\Windows Kits\\10\\App Certification Kit\\appcertui.exe"
+    },
+    {
+        "name": "GPUView",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\gpuview\\GPUView.exe",
+        "exe": "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\gpuview\\GPUView.exe"
+    },
+    {
+        "name": "Windows Performance Analyzer",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\wpa.exe",
+        "exe": "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\wpa.exe"
+    },
+    {
+        "name": "Windows Performance Recorder",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\WPRUI.exe",
+        "exe": "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\WPRUI.exe"
+    },
+    {
+        "name": "Windows Software Development Kit",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Windows\\explorer.exe",
+        "exe": "C:\\Windows\\explorer.exe"
+    },
+    {
+        "name": "Debuggable Package Manager",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell.exe",
+        "exe": "C:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell.exe"
+    },
+    {
+        "name": "Developer Command Prompt for VS 2022",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Windows\\System32\\cmd.exe",
+        "exe": "C:\\Windows\\System32\\cmd.exe"
+    },
+    {
+        "name": "Developer PowerShell for VS 2022",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell.exe",
+        "exe": "C:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell.exe"
+    },
+    {
+        "name": "x64 Native Tools Command Prompt for VS 2022",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Windows\\System32\\cmd.exe",
+        "exe": "C:\\Windows\\System32\\cmd.exe"
+    },
+    {
+        "name": "x64_x86 Cross Tools Command Prompt for VS 2022",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Windows\\System32\\cmd.exe",
+        "exe": "C:\\Windows\\System32\\cmd.exe"
+    },
+    {
+        "name": "x86 Native Tools Command Prompt for VS 2022",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Windows\\System32\\cmd.exe",
+        "exe": "C:\\Windows\\System32\\cmd.exe"
+    },
+    {
+        "name": "x86_x64 Cross Tools Command Prompt for VS 2022",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Windows\\System32\\cmd.exe",
+        "exe": "C:\\Windows\\System32\\cmd.exe"
+    },
+    {
+        "name": "SQL Server 2022 Error and Usage Reporting",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files\\Microsoft SQL Server\\160\\Shared\\SqlWtsn.exe",
+        "exe": "C:\\Program Files\\Microsoft SQL Server\\160\\Shared\\SqlWtsn.exe"
+    },
+    {
+        "name": "SQL Server 2022 Installation Center (64-bit)",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files\\Microsoft SQL Server\\160\\Setup Bootstrap\\SQL2022\\x64\\LandingPage.exe",
+        "exe": "C:\\Program Files\\Microsoft SQL Server\\160\\Setup Bootstrap\\SQL2022\\x64\\LandingPage.exe"
+    },
+    {
+        "name": "GOG GALAXY",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files (x86)\\GOG Galaxy\\GalaxyClient.exe",
+        "exe": "C:\\Program Files (x86)\\GOG Galaxy\\GalaxyClient.exe"
+    },
+    {
+        "name": "@Bios.exe",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Windows\\Installer\\{C9D46F25-5F9D-4E25-B24F-BC00E9EDF529}\\FlashBios.exe_7C826F42EEF74979A4365EBB4AC3C264.exe",
+        "exe": "C:\\Windows\\Installer\\{C9D46F25-5F9D-4E25-B24F-BC00E9EDF529}\\FlashBios.exe_7C826F42EEF74979A4365EBB4AC3C264.exe"
+    },
+    {
+        "name": "Launch APP Center",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\WINDOWS\\Installer\\{D50BEE9A-0EC6-4A58-BF90-35BDC6D6495D}\\RunUpd.exe_5A66DF1D3F3F46A5BDB6096EE00EA84F.exe",
+        "exe": "C:\\WINDOWS\\Installer\\{D50BEE9A-0EC6-4A58-BF90-35BDC6D6495D}\\RunUpd.exe_5A66DF1D3F3F46A5BDB6096EE00EA84F.exe"
+    },
+    {
+        "name": "EasyTune",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Windows\\Installer\\{7F635314-EE21-4E4B-A68D-69AE70BA0E9B}\\EasyTune.exe_E353C356055445C28FB1FA09121D67A6.exe",
+        "exe": "C:\\Windows\\Installer\\{7F635314-EE21-4E4B-A68D-69AE70BA0E9B}\\EasyTune.exe_E353C356055445C28FB1FA09121D67A6.exe"
+    },
+    {
+        "name": "SIV",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Windows\\Installer\\{AAA057C3-10DC-4EB9-A3D6-8208C1BB7411}\\ThermalConsole.exe_807B6BAC847840B98371CFB06CC5E8AC.exe",
+        "exe": "C:\\Windows\\Installer\\{AAA057C3-10DC-4EB9-A3D6-8208C1BB7411}\\ThermalConsole.exe_807B6BAC847840B98371CFB06CC5E8AC.exe"
+    },
+    {
+        "name": "Smart Backup",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files\\Gigabyte\\Smart Backup\\RPMMgr.exe",
+        "exe": "C:\\Program Files\\Gigabyte\\Smart Backup\\RPMMgr.exe"
+    },
+    {
+        "name": "Unload kernel module",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\Program Files\\Cheat Engine 7.5\\Kernelmoduleunloader.exe",
+        "exe": "C:\\Program Files\\Cheat Engine 7.5\\Kernelmoduleunloader.exe"
+    },
+    {
+        "name": "Character Map",
+        "category": "Application",
+        "command_type": "executable",
+        "icon": "C:\\WINDOWS\\system32\\charmap.exe",
+        "exe": "C:\\WINDOWS\\system32\\charmap.exe"
+    }
+]
