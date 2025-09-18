@@ -7,6 +7,7 @@ from nova.service.command_service import CommandService
 from nova.core.settings import AppSettings
 from nova.model.command import Command, Parameter
 from nova.model.suggestion import Suggestion
+from nova.model.program import Program
 import os
 
 class MainWindow(QWidget):
@@ -15,7 +16,8 @@ class MainWindow(QWidget):
         self.setWindowTitle("Nova")
         self.setWindowFlags(self.windowFlags() | Qt.WindowType.FramelessWindowHint)
         layout = QVBoxLayout()
-        self.last_token = None
+        self.current_suggestion = None
+        self.suggestions = []
 
         #Setup Widgets
         self.input_widget = InputWidget()
@@ -33,31 +35,37 @@ class MainWindow(QWidget):
         self.appSettings = AppSettings()
         self.apply_settings()
         self.appSettings.settings_changed.connect(self.apply_settings)
+        self.appSettings.set("theme", "light")
 
         #Setup events
         self.input_widget.input_changed.connect(self.on_input_changed)
         self.suggestions_widget.suggestion_selected.connect(self.on_suggestion_selected)
-        self.appSettings.set("theme", "light")
 
+    
     def on_input_changed(self, input):
         self.update_suggestions(input)
-        self.suggestions_widget.update_selectedSuggestion(input)
 
-    #handle completion      REDO
+    #handle completion
     def on_suggestion_selected(self, suggestion):
         input_text = self.input_widget.input.text()
-        has_trailing_space = input_text.endswith(" ")
         tokens = input_text.strip().split()
 
-        if not tokens and isinstance(suggestion, Suggestion):
+        if isinstance(suggestion, Program):
             new_text = suggestion.name
+            self.current_suggestion = suggestion
 
-        elif isinstance(suggestion, Suggestion):
-            tokens[0] = suggestion.name
-            new_text = " ".join(tokens)
+        elif isinstance(suggestion, Command):
+            self.current_suggestion = suggestion
+            if len(tokens) > 1:
+                tokens[0] = suggestion.name
+                new_text = " ".join(tokens)
+            else:
+                new_text = suggestion.name
 
         elif isinstance(suggestion, Parameter):
+            # probably gotta check other prefixes too
             param_text = f"-{suggestion.short}" if suggestion.short and not suggestion.short.startswith("-") else suggestion.short or suggestion.name
+            has_trailing_space = input_text.endswith(" ")
 
             if has_trailing_space:
                 tokens.append(param_text)
@@ -73,15 +81,24 @@ class MainWindow(QWidget):
         else:
             new_text = input_text 
 
-        self.input_widget.set_input(new_text)
-        self.input_widget.input.setCursorPosition(len(new_text))
+        self.update_input(new_text)
+
+    def update_input(self, text):
+        self.input_widget.set_input(text)
+        self.input_widget.input.setCursorPosition(len(text))
         self.input_widget.input.setFocus()
         self.adjustSize()
-
+        
     def update_suggestions(self, input):
-        suggestions = self.suggestions_service.get_suggestions(input)
-        if suggestions:
-            self.suggestions_widget.update_suggestions(suggestions)
+        self.suggestions, matching_suggestion = self.suggestions_service.get_suggestions(input)
+
+        if matching_suggestion:
+            self.current_suggestion = matching_suggestion
+        else: 
+            self.current_suggestion = None
+
+        if self.suggestions:
+            self.suggestions_widget.update_suggestions(self.suggestions)
             self.suggestions_widget.show()
             self.adjustSize()
         else:
@@ -111,7 +128,7 @@ class MainWindow(QWidget):
                 return True
             elif event.key() == Qt.Key_Return:
                 command_input = self.input_widget.input.text()
-                command_output = self.command_service.execute(command_input)
+                command_output = self.command_service.execute(command_input, self.current_suggestion)
                 return True
             elif event.key() == Qt.Key_Escape:
                 self.close()

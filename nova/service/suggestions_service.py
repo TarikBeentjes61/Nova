@@ -7,7 +7,6 @@ class SuggestionsService:
     def __init__(self):
         self.commands = self.get_commands()
         self.programs = self.get_programs()
-        # Combine commands and programs into a single list
         self.all_suggestions = self.commands + self.programs
 
     def get_commands(self):
@@ -51,32 +50,29 @@ class SuggestionsService:
             return programs
 
     def get_suggestions(self, input_text: str):
-        """
-        Return suggestions from the combined commands + programs list.
-        """
         input_text = input_text.strip()
         tokens = input_text.split()
         suggestions = []
 
-        if not input_text:
-            return self.all_suggestions
+        if not input_text or input_text == "":
+            return self.all_suggestions, None
 
         first_word = tokens[0].lower()
 
-        # Exact match with a command first
-        matching_suggestion = next((c for c in self.all_suggestions if c.name.lower() == first_word), None)
+        # search for exact match first
+        matching_suggestion = next((suggestion for suggestion in self.all_suggestions if suggestion.name.lower() == first_word), None)
         if matching_suggestion:
+            print(f"Exact match found: {matching_suggestion}")
             used_parameters = set(t.lstrip("-+/") for t in tokens[1:])
-            # Only commands have parameters
             if isinstance(matching_suggestion, Command):
                 for param in matching_suggestion.parameters:
                     if param.short not in used_parameters and param.name not in used_parameters:
                         suggestions.append(param)
-            return suggestions
+            return suggestions, matching_suggestion
 
-        # Suggest anything that starts with the input
+        # suggest anything that starts with the input
         for item in self.all_suggestions:
             if item.name.lower().startswith(first_word):
                 suggestions.append(item)
 
-        return suggestions
+        return suggestions, matching_suggestion
