@@ -2,6 +2,7 @@ from PySide6.QtWidgets import QWidget, QVBoxLayout
 from PySide6.QtCore import Qt, QEvent
 from .input_widget import InputWidget
 from .suggestions_widget import SuggestionsWidget
+from .terminal_manager_widget import TerminalManagerWidget
 from nova.service.suggestions_service import SuggestionsService
 from nova.service.command_service import CommandService
 from nova.core.settings import AppSettings
@@ -23,13 +24,16 @@ class MainWindow(QWidget):
         self.input_widget = InputWidget()
         self.suggestions_widget = SuggestionsWidget()
         self.suggestions_widget.suggestions_list.setFocusPolicy(Qt.NoFocus)
+        self.terminal_manager_widget = TerminalManagerWidget()
+        self.terminal_manager_widget.new_terminal("1")
         layout.addWidget(self.input_widget)
         layout.addWidget(self.suggestions_widget)
+        layout.addWidget(self.terminal_manager_widget)
         self.setLayout(layout)
 
         #Setup Services
         self.suggestions_service = SuggestionsService()
-        self.command_service = CommandService()
+        self.command_service = CommandService(self.terminal_manager_widget)
 
         #Setup settings 
         self.appSettings = AppSettings()
@@ -128,7 +132,7 @@ class MainWindow(QWidget):
                 return True
             elif event.key() == Qt.Key_Return:
                 command_input = self.input_widget.input.text()
-                command_output = self.command_service.execute(command_input, self.current_suggestion)
+                self.command_service.execute(command_input, self.current_suggestion)
                 return True
             elif event.key() == Qt.Key_Escape:
                 self.close()

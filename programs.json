@@ -609,13 +609,6 @@
         "exe": "C:\\Program Files\\Git\\cmd\\git-gui.exe"
     },
     {
-        "name": "Hypnospace Outlaw",
-        "category": "Application",
-        "command_type": "executable",
-        "icon": "C:\\Program Files (x86)\\GOG Galaxy\\GalaxyClient.exe",
-        "exe": "C:\\Program Files (x86)\\GOG Galaxy\\GalaxyClient.exe"
-    },
-    {
         "name": "Intel(R) PROSet Adapter Configuration Utility",
         "category": "Application",
         "command_type": "executable",
