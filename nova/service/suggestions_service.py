@@ -1,46 +1,77 @@
 import json
+from nova.model.command import Command, Parameter
+from nova.model.program import Program
+from nova.model.suggestion import Suggestion
 
 class SuggestionsService:
     def __init__(self):
         self.commands = self.get_commands()
+        self.programs = self.get_programs()
+        self.all_suggestions = self.commands + self.programs
 
     def get_commands(self):
-        with open("custom_commands.json", "r") as f:
-            data_custom = json.load(f)
-            custom_commands = data_custom.get("custom", [])
+        commands = []   
+        for filename in ["custom_commands.json", "cmd_commands.json"]:
+            with open(filename, "r") as f:
+                data = json.load(f)
+                for key in data:
+                    for entry in data[key]:
+                        commands.append(Command(
+                            name=entry.get("name", ""),
+                            description=entry.get("description", ""),
+                            category=entry.get("category", ""),
+                            command_type=entry.get("command_type", ""),
+                            example=entry.get("example", ""),
+                            parameters=[
+                                Parameter(
+                                    name=param.get("name", ""),
+                                    short=param.get("short", ""),
+                                    required=param.get("required", False),
+                                    input_=param.get("input", False),
+                                    description=param.get("description", "")
+                                ) for param in entry.get("parameters", [])
+                            ]
+                        ))
+        return commands
 
-        with open("cmd_commands.json", "r") as f:
-            data_cmd = json.load(f)
-            cmd_commands = data_cmd.get("windows", [])
+    def get_programs(self):
+        with open("programs.json", "r") as f:
+            data = json.load(f)
+            programs = []
+            for entry in data:
+                programs.append(Program(
+                    name=entry.get("name", ""),
+                    description=entry.get("description", "") or f"{entry.get('name', '')} application",
+                    category=entry.get("category", "Application"),
+                    command_type=entry.get("command_type", "executable"),
+                    exe=entry.get("exe", ""),
+                    icon=entry.get("icon", "")
+                ))
+            return programs
 
-        return cmd_commands + custom_commands
-    
-    def get_suggestions(self, input_text):
+    def get_suggestions(self, input_text: str):
         input_text = input_text.strip()
         tokens = input_text.split()
-
         suggestions = []
 
-        if not input_text:
-            suggestions = [cmd["name"] for cmd in self.commands]
-        else:
-            first_word = tokens[0].lower()
-            matching_command = next((cmd for cmd in self.commands if cmd["name"].lower() == first_word), None)
+        if not input_text or input_text == "":
+            return self.all_suggestions, None
 
-            if matching_command:
-                used_params = set()
-                for t in tokens[1:]:
-                    if t.startswith("-"):
-                        used_params.add(t.lstrip("-"))
+        first_word = tokens[0].lower()
 
-                # Suggest remaining parameters/flags for this command
-                for param in matching_command.get("parameters", []):
-                    if param["short"] not in used_params and param["name"] not in used_params:
-                        suggestions.append(f"-{param['short']}" if param.get("short") else f"--{param['name']}")
-            else:
-                # Suggest commands that start with typed text
-                for cmd in self.commands:
-                    if cmd["name"].startswith(first_word):
-                        suggestions.append(cmd["name"])
+        # search for exact match first
+        matching_suggestion = next((suggestion for suggestion in self.all_suggestions if suggestion.name.lower() == first_word), None)
+        if matching_suggestion:
+            used_parameters = set(t.lstrip("-+/") for t in tokens[1:])
+            if isinstance(matching_suggestion, Command):
+                for param in matching_suggestion.parameters:
+                    if param.short not in used_parameters and param.name not in used_parameters:
+                        suggestions.append(param)
+            return suggestions, matching_suggestion
 
-        return suggestions
+        # suggest anything that starts with the input
+        for item in self.all_suggestions:
+            if item.name.lower().startswith(first_word):
+                suggestions.append(item)
+
+        return suggestions, matching_suggestion

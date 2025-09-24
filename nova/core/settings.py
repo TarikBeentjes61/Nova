@@ -1,4 +1,6 @@
 from PySide6.QtCore import QObject, Signal
+from PySide6.QtGui import QKeySequence
+
 import json
 class AppSettings(QObject):
     _instance = None

@@ -1,6 +1,8 @@
 import sys
+import json
 from PySide6.QtWidgets import QApplication
 from nova.ui import MainWindow
+from nova.core.discover import discover_programs
 
 """
 Command Categories:
@@ -26,8 +28,16 @@ system
 """
 
 def main():
+    discovered = discover_programs(limit=250)
+
+    json_str = json.dumps(discovered, indent=4)
+    with open("programs.json", "w") as f:
+        f.write(json_str)
+
+
     app = QApplication(sys.argv)
     window = MainWindow()
+    app.installEventFilter(window)
     window.show()
     sys.exit(app.exec())
 
