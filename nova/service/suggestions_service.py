@@ -62,7 +62,6 @@ class SuggestionsService:
         # search for exact match first
         matching_suggestion = next((suggestion for suggestion in self.all_suggestions if suggestion.name.lower() == first_word), None)
         if matching_suggestion:
-            print(f"Exact match found: {matching_suggestion}")
             used_parameters = set(t.lstrip("-+/") for t in tokens[1:])
             if isinstance(matching_suggestion, Command):
                 for param in matching_suggestion.parameters:

@@ -10,7 +10,7 @@ class CommandService:
      def execute(self, input_text: str, suggestion: Suggestion):
           if isinstance(suggestion, Command):
                terminal = self.terminalManager.active_terminal
-               if terminal and terminal.is_running() == False:
+               if terminal:
                     terminal.send_input(input_text + "\n")
                     self.history.append(input_text)
                     return f"Executed command: {input_text}"
