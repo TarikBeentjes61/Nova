@@ -24,16 +24,16 @@ class MainWindow(QWidget):
         self.input_widget = InputWidget()
         self.suggestions_widget = SuggestionsWidget()
         self.suggestions_widget.suggestions_list.setFocusPolicy(Qt.NoFocus)
-        self.terminal_manager_widget = TerminalManagerWidget()
-        self.terminal_manager_widget.new_terminal("1")
+        self.terminalManager_widget = TerminalManagerWidget()
+
         layout.addWidget(self.input_widget)
         layout.addWidget(self.suggestions_widget)
-        layout.addWidget(self.terminal_manager_widget)
+        layout.addWidget(self.terminalManager_widget)
         self.setLayout(layout)
 
         #Setup Services
         self.suggestions_service = SuggestionsService()
-        self.command_service = CommandService(self.terminal_manager_widget)
+        self.command_service = CommandService(self.terminalManager_widget)
 
         #Setup settings 
         self.appSettings = AppSettings()

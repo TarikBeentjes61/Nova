@@ -29,7 +29,7 @@ class TerminalWidget(QWidget):
         self.process_id = self.process.processId()
     
     # check if a process is running or not
-    def get_state(self):
+    def is_busy(self):
         try:
             if self.process_id:
                 proc = psutil.Process(self.process_id)
@@ -51,7 +51,7 @@ class TerminalWidget(QWidget):
         self.terminal_display.append(f'<span style="color: red;">{text}</span>')
 
     def send_input(self, input: str):
-        if not self.get_state():
+        if not self.is_busy():
             if not input.endswith('\n'):
                 input += '\n'
             self.process.write(input.encode())
