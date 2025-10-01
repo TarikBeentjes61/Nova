@@ -18,7 +18,6 @@ class MainWindow(QWidget):
         self.setWindowFlags(self.windowFlags() | Qt.WindowType.FramelessWindowHint)
         layout = QVBoxLayout()
         self.current_suggestion = None
-        self.suggestions = []
 
         #Setup Widgets
         self.input_widget = InputWidget()
@@ -67,15 +66,13 @@ class MainWindow(QWidget):
                 new_text = suggestion.name
 
         elif isinstance(suggestion, Parameter):
-            # probably gotta check other prefixes too
-            param_text = f"-{suggestion.short}" if suggestion.short and not suggestion.short.startswith("-") else suggestion.short or suggestion.name
+            param_text = f"{suggestion.name}"
             has_trailing_space = input_text.endswith(" ")
 
             if has_trailing_space:
                 tokens.append(param_text)
             else:
-                last_token = tokens[-1] if tokens else ""
-                if last_token.startswith("-") or last_token == "":
+                if len(tokens) > 1:
                     tokens[-1] = param_text
                 else:
                     tokens.append(param_text)
@@ -94,18 +91,19 @@ class MainWindow(QWidget):
         self.adjustSize()
         
     def update_suggestions(self, input):
-        self.suggestions, matching_suggestion = self.suggestions_service.get_suggestions(input)
+        suggestions, matching_suggestion = self.suggestions_service.get_suggestions(input)
 
         if matching_suggestion:
             self.current_suggestion = matching_suggestion
         else: 
             self.current_suggestion = None
 
-        if self.suggestions:
-            self.suggestions_widget.update_suggestions(self.suggestions)
+        if suggestions:
+            self.suggestions_widget.update_suggestions(suggestions)
             self.suggestions_widget.show()
             self.adjustSize()
         else:
+            self.suggestions_widget.update_suggestions(suggestions)
             self.suggestions_widget.hide()
 
     def apply_theme(self, theme):

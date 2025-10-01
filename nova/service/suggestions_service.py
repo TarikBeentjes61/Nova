@@ -1,7 +1,6 @@
 import json
 from nova.model.command import Command, Parameter
 from nova.model.program import Program
-from nova.model.suggestion import Suggestion
 
 class SuggestionsService:
     def __init__(self):
@@ -11,7 +10,7 @@ class SuggestionsService:
 
     def get_commands(self):
         commands = []   
-        for filename in ["custom_commands.json", "cmd_commands.json"]:
+        for filename in ["custom_commands.json", "cmd_commands.json", "network_commands.json"]:
             with open(filename, "r") as f:
                 data = json.load(f)
                 for key in data:
@@ -62,13 +61,13 @@ class SuggestionsService:
         # search for exact match first
         matching_suggestion = next((suggestion for suggestion in self.all_suggestions if suggestion.name.lower() == first_word), None)
         if matching_suggestion:
-            used_parameters = set(t.lstrip("-+/") for t in tokens[1:])
+            used_parameters = set(t for t in tokens[1:])
             if isinstance(matching_suggestion, Command):
                 for param in matching_suggestion.parameters:
                     if param.short not in used_parameters and param.name not in used_parameters:
                         suggestions.append(param)
             return suggestions, matching_suggestion
-
+            
         # suggest anything that starts with the input
         for item in self.all_suggestions:
             if item.name.lower().startswith(first_word):

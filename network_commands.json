@@ -1,0 +1,160 @@
+{
+  "windows": [
+    {
+      "name": "ping",
+      "description": "Tests connectivity to another host and measures round-trip time.",
+      "example": "ping google.com -n 4",
+      "parameters": [
+        {"name": "-t", "input": false, "description": "Pings the specified host until stopped with CTRL+C."},
+        {"name": "-a", "input": false, "description": "Resolves addresses to hostnames."},
+        {"name": "-n", "input": true, "description": "Specifies the number of echo requests to send."},
+        {"name": "-l", "input": true, "description": "Specifies the send buffer size in bytes."},
+        {"name": "-f", "input": false, "description": "Sets the Do Not Fragment flag in the packet."},
+        {"name": "-i", "input": true, "description": "Specifies the TTL (Time To Live) for packets."},
+        {"name": "-v", "input": true, "description": "Specifies Type of Service (TOS) value."},
+        {"name": "-r", "input": true, "description": "Records the route for the specified number of hops."},
+        {"name": "-s", "input": true, "description": "Timestamps for the specified number of hops."},
+        {"name": "-4", "input": false, "description": "Forces IPv4."},
+        {"name": "-6", "input": false, "description": "Forces IPv6."}
+      ],
+      "category": "Networking",
+      "command_type": "cmd"
+    },
+    {
+      "name": "tracert",
+      "description": "Displays the route packets take to a network host.",
+      "example": "tracert google.com",
+      "parameters": [
+        {"name": "-d", "input": false, "description": "Do not resolve addresses to hostnames."},
+        {"name": "-h", "input": true, "description": "Specifies the maximum number of hops."},
+        {"name": "-j", "input": true, "description": "Loose source route along the host-list."},
+        {"name": "-w", "input": true, "description": "Wait timeout in milliseconds for each reply."},
+        {"name": "-4", "input": false, "description": "Forces IPv4."},
+        {"name": "-6", "input": false, "description": "Forces IPv6."}
+      ],
+      "category": "Networking",
+      "command_type": "cmd"
+    },
+    {
+      "name": "pathping",
+      "description": "Combines ping and tracert to show packet loss at each router between source and destination.",
+      "example": "pathping google.com",
+      "parameters": [
+        {"name": "-n", "input": false, "description": "Do not resolve addresses to hostnames."},
+        {"name": "-h", "input": true, "description": "Maximum number of hops to search for target."},
+        {"name": "-g", "input": true, "description": "Loose source route along the host-list."},
+        {"name": "-p", "input": true, "description": "Wait period between pings (ms)."},
+        {"name": "-q", "input": true, "description": "Number of queries per hop."}
+      ],
+      "category": "Networking",
+      "command_type": "cmd"
+    },
+    {
+      "name": "ipconfig",
+      "description": "Displays IP configuration information for all network interfaces.",
+      "example": "ipconfig /all",
+      "parameters": [
+        {"name": "/all", "input": false, "description": "Displays full configuration information."},
+        {"name": "/release", "input": true, "description": "Releases the IP address for the specified adapter."},
+        {"name": "/renew", "input": true, "description": "Renews the IP address for the specified adapter."},
+        {"name": "/flushdns", "input": false, "description": "Flushes the DNS resolver cache."},
+        {"name": "/displaydns", "input": false, "description": "Displays the contents of the DNS resolver cache."},
+        {"name": "/registerdns", "input": false, "description": "Refreshes all DHCP leases and re-registers DNS names."}
+      ],
+      "category": "Networking",
+      "command_type": "cmd"
+    },
+    {
+      "name": "netstat",
+      "description": "Displays network connections, routing tables, and interface statistics.",
+      "example": "netstat -an",
+      "parameters": [
+        {"name": "-a", "input": false, "description": "Displays all active connections and listening ports."},
+        {"name": "-n", "input": false, "description": "Displays addresses and port numbers numerically."},
+        {"name": "-o", "input": false, "description": "Displays the owning process ID for each connection."},
+        {"name": "-b", "input": false, "description": "Displays the executable involved in creating each connection or listening port."},
+        {"name": "-r", "input": false, "description": "Displays the routing table."},
+        {"name": "-e", "input": false, "description": "Displays Ethernet statistics."}
+      ],
+      "category": "Networking",
+      "command_type": "cmd"
+    },
+    {
+      "name": "arp",
+      "description": "Displays and modifies entries in the Address Resolution Protocol cache.",
+      "example": "arp -a",
+      "parameters": [
+        {"name": "-a", "input": false, "description": "Displays the current ARP table."},
+        {"name": "-d", "input": true, "description": "Deletes an entry from the ARP cache."},
+        {"name": "-s", "input": true, "description": "Adds a static ARP entry."}
+      ],
+      "category": "Networking",
+      "command_type": "cmd"
+    },
+    {
+      "name": "nslookup",
+      "description": "Queries DNS to obtain domain name or IP address mapping.",
+      "example": "nslookup google.com",
+      "parameters": [
+        {"name": "server", "input": true, "description": "Specifies an alternate DNS server to query."},
+        {"name": "-type", "input": true, "description": "Specifies the type of DNS record to query (A, MX, CNAME, etc.)."}
+      ],
+      "category": "Networking",
+      "command_type": "cmd"
+    },
+    {
+      "name": "getmac",
+      "description": "Displays the MAC address of all network adapters.",
+      "example": "getmac /v /fo list",
+      "parameters": [
+        {"name": "/v", "input": false, "description": "Displays verbose output."},
+        {"name": "/fo", "input": true, "description": "Specifies output format: TABLE, LIST, CSV."},
+        {"name": "/s", "input": true, "description": "Specifies the remote system to connect to."},
+        {"name": "/u", "input": true, "description": "Specifies the user context."},
+        {"name": "/p", "input": true, "description": "Specifies the password for the given user context."}
+      ],
+      "category": "Networking",
+      "command_type": "cmd"
+    },
+    {
+      "name": "netsh",
+      "description": "Configures network interfaces, firewall, routing, and other network settings.",
+      "example": "netsh interface ip show config",
+      "parameters": [
+        {"name": "interface", "input": true, "description": "Specifies an interface to configure."},
+        {"name": "ip", "input": true, "description": "Configures IP settings."},
+        {"name": "firewall", "input": true, "description": "Configures firewall settings."},
+        {"name": "show", "input": false, "description": "Displays settings or configuration."},
+        {"name": "set", "input": true, "description": "Sets specified parameters for network configuration."}
+      ],
+      "category": "Networking",
+      "command_type": "cmd"
+    },
+    {
+      "name": "telnet",
+      "description": "Communicates with a remote host using the TELNET protocol.",
+      "example": "telnet example.com 23",
+      "parameters": [],
+      "category": "Networking",
+      "command_type": "cmd"
+    },
+    {
+      "name": "ftp",
+      "description": "Transfers files to and from a remote computer using the FTP protocol.",
+      "example": "ftp ftp.example.com",
+      "parameters": [],
+      "category": "Networking",
+      "command_type": "cmd"
+    },
+    {
+      "name": "tftp",
+      "description": "Transfers files to and from a remote host using the trivial FTP protocol.",
+      "example": "tftp -i 192.168.1.10 GET file.txt",
+      "parameters": [
+        {"name": "-i", "input": false, "description": "Uses binary (image) transfer mode."}
+      ],
+      "category": "Networking",
+      "command_type": "cmd"
+    }
+  ]
+}

@@ -28,20 +28,17 @@ class SuggestionsWidget(QWidget):
 
     def update_suggestions(self, items):
         self.suggestions_list.clear()
-
-        for item in items:
-            if isinstance(item, Suggestion):
-                display_text = item.name
-            elif isinstance(item, Parameter):
-                display_text = f"-{item.short}" if item.short else item.name
-
-            list_item = QListWidgetItem(display_text)
-            list_item.setData(Qt.UserRole, item) 
-            
-            self.suggestions_list.addItem(list_item)
-
-        #set height 
         if items:
+            for item in items:
+                if isinstance(item, Suggestion):
+                    display_text = item.name
+                elif isinstance(item, Parameter):
+                    display_text = f"{item.name} - ({item.description})"
+
+                list_item = QListWidgetItem(display_text)
+                list_item.setData(Qt.UserRole, item) 
+                self.suggestions_list.addItem(list_item)
+
             row_height = self.suggestions_list.sizeHintForRow(0)
             visible_count = min(len(items), self.maximumItems)
             total_height = row_height * visible_count + 2 * self.suggestions_list.frameWidth()
@@ -65,6 +62,9 @@ class SuggestionsWidget(QWidget):
                     return
 
     def navigate_suggestions(self, forward=True):
+        if self.suggestions_list.count() == 0:
+            return
+        
         if self.suggestions_list.currentRow():
             current_row = self.suggestions_list.currentRow()
         else:

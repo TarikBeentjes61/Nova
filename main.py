@@ -34,7 +34,6 @@ def main():
     with open("programs.json", "w") as f:
         f.write(json_str)
 
-
     app = QApplication(sys.argv)
     window = MainWindow()
     app.installEventFilter(window)
