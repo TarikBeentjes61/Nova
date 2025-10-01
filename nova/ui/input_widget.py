@@ -10,7 +10,7 @@ class InputWidget(QWidget):
         
         self.input = QLineEdit()
         self.input.textChanged.connect(self.emit_change)
-
+        self.input.width = 800
         layout.addWidget(self.input)
         self.setLayout(layout)
 

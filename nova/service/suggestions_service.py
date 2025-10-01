@@ -24,7 +24,6 @@ class SuggestionsService:
                             parameters=[
                                 Parameter(
                                     name=param.get("name", ""),
-                                    short=param.get("short", ""),
                                     required=param.get("required", False),
                                     input_=param.get("input", False),
                                     description=param.get("description", "")
@@ -64,7 +63,7 @@ class SuggestionsService:
             used_parameters = set(t for t in tokens[1:])
             if isinstance(matching_suggestion, Command):
                 for param in matching_suggestion.parameters:
-                    if param.short not in used_parameters and param.name not in used_parameters:
+                    if param.name not in used_parameters:
                         suggestions.append(param)
             return suggestions, matching_suggestion
             

@@ -1,9 +1,8 @@
 from nova.model.suggestion import Suggestion
 
 class Parameter:
-    def __init__(self, name, short, required, input_, description):
+    def __init__(self, name, required, input_, description):
         self.name = name
-        self.short = short
         self.required = required
         self.input = input_
         self.description = description

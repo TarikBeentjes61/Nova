@@ -38,7 +38,6 @@ class MainWindow(QWidget):
         self.appSettings = AppSettings()
         self.apply_settings()
         self.appSettings.settings_changed.connect(self.apply_settings)
-        self.appSettings.set("theme", "light")
 
         #Setup events
         self.input_widget.input_changed.connect(self.on_input_changed)
