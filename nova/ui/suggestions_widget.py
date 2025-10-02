@@ -1,7 +1,6 @@
 from PySide6.QtWidgets import QWidget, QListWidget, QVBoxLayout, QSizePolicy, QListWidgetItem
 from PySide6.QtCore import Qt, Signal
-from nova.model.command import Parameter
-from nova.model.suggestion import Suggestion
+from nova.model.suggestion import Suggestion, Parameter
 
 class SuggestionsWidget(QWidget):
     suggestion_selected = Signal(object)
@@ -28,6 +27,7 @@ class SuggestionsWidget(QWidget):
 
     def update_suggestions(self, items):
         self.suggestions_list.clear()
+        print(items)
         if items:
             for item in items:
                 if isinstance(item, Suggestion):

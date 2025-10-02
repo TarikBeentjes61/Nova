@@ -1,51 +1,27 @@
 import json
-from nova.model.command import Command, Parameter
-from nova.model.program import Program
+import os
+from nova.model.suggestion import CommandType, Custom, Suggestion, Cmd, Parameter, Program, suggestion_from_dict
 
 class SuggestionsService:
     def __init__(self):
-        self.commands = self.get_commands()
-        self.programs = self.get_programs()
-        self.all_suggestions = self.commands + self.programs
+        folder = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data", "suggestions")
+        self.all_suggestions = self.load_suggestions_from_folder(folder)
 
-    def get_commands(self):
-        commands = []   
-        for filename in ["custom_commands.json", "cmd_commands.json", "network_commands.json"]:
-            with open(filename, "r") as f:
-                data = json.load(f)
-                for key in data:
-                    for entry in data[key]:
-                        commands.append(Command(
-                            name=entry.get("name", ""),
-                            description=entry.get("description", ""),
-                            category=entry.get("category", ""),
-                            command_type=entry.get("command_type", ""),
-                            example=entry.get("example", ""),
-                            parameters=[
-                                Parameter(
-                                    name=param.get("name", ""),
-                                    required=param.get("required", False),
-                                    input_=param.get("input", False),
-                                    description=param.get("description", "")
-                                ) for param in entry.get("parameters", [])
-                            ]
-                        ))
-        return commands
+    def load_suggestions_from_folder(self, folder: str):
+        suggestions = []
+        for root, _, files in os.walk(folder):
+            for filename in files:
+                if filename.endswith(".json"):
+                    filepath = os.path.join(root, filename)
+                    with open(filepath, "r", encoding="utf-8") as f:
+                        data = json.load(f)
+                        if isinstance(data, dict):
+                            suggestions.append(suggestion_from_dict(data, filepath))
+                        elif isinstance(data, list):
+                            for item in data:
+                                suggestions.append(suggestion_from_dict(item, filepath))
+        return suggestions
 
-    def get_programs(self):
-        with open("programs.json", "r") as f:
-            data = json.load(f)
-            programs = []
-            for entry in data:
-                programs.append(Program(
-                    name=entry.get("name", ""),
-                    description=entry.get("description", "") or f"{entry.get('name', '')} application",
-                    category=entry.get("category", "Application"),
-                    command_type=entry.get("command_type", "executable"),
-                    exe=entry.get("exe", ""),
-                    icon=entry.get("icon", "")
-                ))
-            return programs
 
     def get_suggestions(self, input_text: str):
         input_text = input_text.strip()
@@ -61,7 +37,7 @@ class SuggestionsService:
         matching_suggestion = next((suggestion for suggestion in self.all_suggestions if suggestion.name.lower() == first_word), None)
         if matching_suggestion:
             used_parameters = set(t for t in tokens[1:])
-            if isinstance(matching_suggestion, Command):
+            if isinstance(matching_suggestion, Cmd) or isinstance(matching_suggestion, Custom):
                 for param in matching_suggestion.parameters:
                     if param.name not in used_parameters:
                         suggestions.append(param)

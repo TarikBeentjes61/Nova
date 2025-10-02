@@ -1,0 +1,24 @@
+[
+  {
+    "name": "prince",
+    "description": "Prints something",
+    "example": "print --upper Hello World!",
+    "command": "python printScript.py [args]",
+    "parameters": [
+      {
+        "name": "--upper",
+        "input": false,
+        "required": false,
+        "description": "Makes all characters uppercase"
+      },
+      {
+        "name": "--lower",
+        "input": false,
+        "required": false,
+        "description": "Makes all characters lowercase"
+      }
+    ],
+    "category": "Text",
+    "command_type": "custom"
+  }
+]

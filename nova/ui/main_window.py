@@ -6,9 +6,7 @@ from .terminal_manager_widget import TerminalManagerWidget
 from nova.service.suggestions_service import SuggestionsService
 from nova.service.command_service import CommandService
 from nova.core.settings import AppSettings
-from nova.model.command import Command, Parameter
-from nova.model.suggestion import Suggestion
-from nova.model.program import Program
+from nova.model.suggestion import Suggestion, Custom, Cmd, Parameter, Program
 import os
 
 class MainWindow(QWidget):
@@ -56,7 +54,7 @@ class MainWindow(QWidget):
             new_text = suggestion.name
             self.current_suggestion = suggestion
 
-        elif isinstance(suggestion, Command):
+        elif isinstance(suggestion, Cmd) or isinstance(suggestion, Custom):
             self.current_suggestion = suggestion
             if len(tokens) > 1:
                 tokens[0] = suggestion.name
